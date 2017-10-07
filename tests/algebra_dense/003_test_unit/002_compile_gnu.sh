@@ -17,7 +17,7 @@ do
         rm x_intel_$var
     fi
 
-    g++-7.1.0   -c                                              \
+    g++-7.2.0   -c                                              \
                 -O3                                             \
                 -Wall                                           \
                 -std=gnu++14                                    \
@@ -31,7 +31,7 @@ do
                 driver_program.cpp
 
 
-    g++-7.1.0   algebra_blas_level_1.o                      \
+    g++-7.2.0   algebra_blas_level_1.o                      \
                 unit_test_$var.o                            \
                 driver_program.o                            \
                 /opt/mkl_pgg/libmkl_gnu_lp64_2017_0_098.a   \

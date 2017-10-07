@@ -65,7 +65,7 @@ sep::vector_dense<T> &sep::vector_dense<T>::operator=(const T &val) {
 // move assignment operator
 
 template<typename T>
-sep::vector_dense<T> &sep::vector_dense<T>::operator=(sep::vector_dense<T> &&vec) {
+sep::vector_dense<T> &sep::vector_dense<T>::operator=(sep::vector_dense<T> &&vec) noexcept {
 
     if (skz::DEBUG) {
         sep::check_allocation(vec);
@@ -73,7 +73,7 @@ sep::vector_dense<T> &sep::vector_dense<T>::operator=(sep::vector_dense<T> &&vec
 
     if (this != &vec) {
         deallocate();
-        _vdsp = vec._vdsp;
+        _vdsp = std::move(vec._vdsp);
         _is_alloc = vec._is_alloc;
         _dimension = vec._dimension;
         vec._dimension = 0;

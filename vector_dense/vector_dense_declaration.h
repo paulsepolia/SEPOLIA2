@@ -151,7 +151,6 @@ namespace sep {
 
         bool operator!=(const T &) const;
 
-
         //=====//
         // STL //
         //=====//

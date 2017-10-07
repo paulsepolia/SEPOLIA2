@@ -12,7 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4df9745-e8c1-4d9a-8dc3-9813dcb27ec3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/algebra_dense/003_test_unit/002_compile_gnu.sh" afterPath="$PROJECT_DIR$/tests/algebra_dense/003_test_unit/002_compile_gnu.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vector_dense/vector_dense_declaration.h" afterPath="$PROJECT_DIR$/vector_dense/vector_dense_declaration.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vector_dense/vector_dense_operators.h" afterPath="$PROJECT_DIR$/vector_dense/vector_dense_operators.h" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,8 +35,48 @@
       <file leaf-file-name="vector_dense_declaration.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vector_dense/vector_dense_declaration.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-10304">
-              <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state relative-caret-position="305">
+              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vector_dense_operators.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vector_dense/vector_dense_operators.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="errors.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/parameters/errors.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parameters.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/parameters/parameters.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="unit_test_blas.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/algebra_dense/003_test_unit/unit_test_blas.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="924">
+              <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -48,6 +90,7 @@
       <find>spl::</find>
       <find>spl</find>
       <find>size()</find>
+      <find>noex</find>
     </findStrings>
     <replaceStrings>
       <replace>vector_dense</replace>
@@ -93,9 +136,9 @@
         <option value="$PROJECT_DIR$/vector_dense/vector_dense_stl_members.h" />
         <option value="$PROJECT_DIR$/vector_dense/vector_dense_algebra.h" />
         <option value="$PROJECT_DIR$/vector_dense/vector_dense_aux.h" />
-        <option value="$PROJECT_DIR$/vector_dense/vector_dense_operators.h" />
         <option value="$PROJECT_DIR$/vector_dense/vector_dence_constructors.h" />
         <option value="$PROJECT_DIR$/vector_dense/vector_dense_declaration.h" />
+        <option value="$PROJECT_DIR$/vector_dense/vector_dense_operators.h" />
       </list>
     </option>
   </component>
@@ -128,6 +171,40 @@
             <path>
               <item name="SEPOLIA2" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="SEPOLIA2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEPOLIA2" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="SEPOLIA2" type="462c0819:PsiDirectoryNode" />
+              <item name="parameters" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEPOLIA2" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="SEPOLIA2" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEPOLIA2" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="SEPOLIA2" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="algebra_dense" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEPOLIA2" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="SEPOLIA2" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="algebra_dense" type="462c0819:PsiDirectoryNode" />
+              <item name="003_test_unit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEPOLIA2" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="SEPOLIA2" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="vector_dense" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SEPOLIA2" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="SEPOLIA2" type="462c0819:PsiDirectoryNode" />
+              <item name="vector_dense" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -414,26 +491,10 @@
     <entry file="file://$PROJECT_DIR$/VectorDenseMemory.hpp" />
     <entry file="file://$PROJECT_DIR$/utilities/utils.h" />
     <entry file="file://$PROJECT_DIR$/main.cpp" />
-    <entry file="file://$PROJECT_DIR$/parameters/parameters.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/algebra_dense/algebra_blas_level_1.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/algebra_dense/003_test_unit/unit_test_blas.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -574,14 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vector_dense/vector_dense_operators.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="404" column="0" lean-forward="true" selection-start-line="404" selection-start-column="0" selection-end-line="404" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vector_dense/vector_dense_set.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1596">
@@ -606,10 +659,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/parameters/errors.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parameters/parameters.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/algebra_dense/003_test_unit/unit_test_blas.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vector_dense/vector_dense_operators.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vector_dense/vector_dense_declaration.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10304">
-          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        <state relative-caret-position="305">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
