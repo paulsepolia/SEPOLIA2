@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/main.cpp
+iostream
+-
+iomanip
+-
+cmath
+-
+vector_dense/vector_dense.h
+/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/vector_dense/vector_dense.h
+
+/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/parameters/parameters.h
+
+/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/vector_dense/vector_dence_constructors.h
+vector_dense_declaration.h
+/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/vector_dense/vector_dense_declaration.h
+
+/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/vector_dense/vector_dense.h
+vector_dense_declaration.h
+/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/vector_dense/vector_dense_declaration.h
+vector_dence_constructors.h
+/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/vector_dense/vector_dence_constructors.h
+vector_dense_memory.h
+/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/vector_dense/vector_dense_memory.h
+
+/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/vector_dense/vector_dense_declaration.h
+memory
+-
+../parameters/parameters.h
+/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/parameters/parameters.h
+
+/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/vector_dense/vector_dense_memory.h
+vector_dense_declaration.h
+/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/vector_dense/vector_dense_declaration.h
+

@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/SEPOLIA2.dir/main.cpp.o  -o SEPOLIA2 
