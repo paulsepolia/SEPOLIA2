@@ -53,7 +53,7 @@ sep::vector_dense<T>::vector_dense(sep::vector_dense<T> &&vec) noexcept :
         _is_alloc(vec._is_alloc) {
 
     _vdsp.reset();
-    _vdsp = std::move(vec._vdsp.get());
+    _vdsp = std::move(vec._vdsp);
     vec._is_alloc = false;
     vec._dimension = 0;
 }

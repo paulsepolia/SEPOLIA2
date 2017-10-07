@@ -50,160 +50,159 @@ namespace sep {
         T get_element(const uint64_t &) const;
         void set_element(const uint64_t &, const T &);
 
-//
-//        //===========//
-//        // operators //
-//        //===========//
-//
-//        // std::vector copy assignment operator
-//        vector_dense<T> &operator=(const std::vector<T> &);
-//
-//        // std::vector move assignment operator
-//        vector_dense<T> &operator=(std::vector<T> &&);
-//
-//        // vector copy assignment operator
-//        vector_dense<T> &operator=(const vector_dense<T> &);
-//
-//        // element copy assignment operator
-//        vector_dense<T> &operator=(const T &);
-//
-//        // vector move assignment operator
-//        vector_dense<T> &operator=(vector_dense<T> &&);
-//
-//        // operator +
-//        vector_dense<T> operator+(const vector_dense<T> &) const;
-//
-//        vector_dense<T> operator+(const T &) const;
-//
-//        template<typename T2>
-//        friend vector_dense<T2> operator+(const T2 &,
-//                                          const vector_dense<T2> &);
-//
-//        // operator -
-//        vector_dense<T> operator-(const vector_dense<T> &) const;
-//
-//        vector_dense<T> operator-(const T &) const;
-//
-//        template<typename T2>
-//        friend vector_dense<T2> operator-(const T2 &,
-//                                          const vector_dense<T2> &);
-//
-//        // operator *
-//        vector_dense<T> operator*(const vector_dense<T> &) const;
-//
-//        vector_dense<T> operator*(const T &) const;
-//
-//        template<typename T2>
-//        friend vector_dense<T2> operator*(const T2 &,
-//                                          const vector_dense<T2> &);
-//
-//        // operator /
-//        vector_dense<T> operator/(const vector_dense<T> &) const;
-//
-//        vector_dense<T> operator/(const T &) const;
-//
-//        template<typename T2>
-//        friend vector_dense<T2> operator/(const T2 &,
-//                                          const vector_dense<T2> &);
-//
-//        // operator ()
-//        T operator()(const uint64_t &) const;
-//
-//        // operator []
-//        T &operator[](const uint64_t &) const;
-//
-//        // operator +=
-//        vector_dense<T> operator+=(const vector_dense<T> &);
-//
-//        vector_dense<T> operator+=(const T &);
-//
-//        // operator -=
-//        vector_dense<T> operator-=(const vector_dense<T> &);
-//
-//        vector_dense<T> operator-=(const T &);
-//
-//        // operator *=
-//        vector_dense<T> operator*=(const vector_dense<T> &);
-//
-//        vector_dense<T> operator*=(const T &);
-//
-//        // operator /=
-//        vector_dense<T> operator/=(const vector_dense<T> &);
-//
-//        vector_dense<T> operator/=(const T &);
-//
-//        // operator ++
-//        vector_dense<T> operator++();
-//
-//        vector_dense<T> operator++(int);
-//
-//        // operator --
-//        vector_dense<T> operator--();
-//
-//        vector_dense<T> operator--(int);
-//
-//        // operator ==
-//        bool operator==(const vector_dense<T> &) const;
-//
-//        bool operator==(const T &) const;
-//
-//        // operator !=
-//        bool operator!=(const vector_dense<T> &) const;
-//
-//        bool operator!=(const T &) const;
-//
-//
-//        //=====//
-//        // STL //
-//        //=====//
-//
-//        T &at(const uint64_t &);
-//
-//        const T &at(const uint64_t &) const;
-//
-//        T &back();
-//
-//        const T &back() const;
-//
-//        T *begin();
-//
-//        const T *begin() const;
-//
-//        void clear() noexcept;
-//
-//        bool empty() const noexcept;
-//
-//        T *end();
-//
-//        const T *end() const;
-//
-//        T &front();
-//
-//        const T &front() const;
-//
-//        uint64_t size() const noexcept;
-//
-//        void swap(vector_dense<T> &);
-//
-//        //===============//
-//        // algebra_dense //
-//        //===============//
-//
-//        vector_dense<T> plus(const vector_dense<T> &, const bool & = false) const;
-//
-//        vector_dense<T> plus(const T &, const bool & = false) const;
-//
-//        vector_dense<T> times(const vector_dense<T> &, const bool & = false) const;
-//
-//        vector_dense<T> times(const T &, const bool & = false) const;
-//
-//        vector_dense<T> subtract(const vector_dense<T> &, const bool & = false) const;
-//
-//        vector_dense<T> subtract(const T &, const bool & = false) const;
-//
-//        vector_dense<T> divide(const vector_dense<T> &, const bool & = false) const;
-//
-//        vector_dense<T> divide(const T &, const bool & = false) const;
+        //===========//
+        // operators //
+        //===========//
+
+        // std::vector copy assignment operator
+        vector_dense<T> &operator=(const std::vector<T> &);
+
+        // std::vector move assignment operator
+        vector_dense<T> &operator=(std::vector<T> &&);
+
+        // vector copy assignment operator
+        vector_dense<T> &operator=(const vector_dense<T> &);
+
+        // element copy assignment operator
+        vector_dense<T> &operator=(const T &);
+
+        // vector move assignment operator
+        vector_dense<T> &operator=(vector_dense<T> &&);
+
+        // operator +
+        vector_dense<T> operator+(const vector_dense<T> &) const;
+
+        vector_dense<T> operator+(const T &) const;
+
+        template<typename T2>
+        friend vector_dense<T2> operator+(const T2 &,
+                                          const vector_dense<T2> &);
+
+        // operator -
+        vector_dense<T> operator-(const vector_dense<T> &) const;
+
+        vector_dense<T> operator-(const T &) const;
+
+        template<typename T2>
+        friend vector_dense<T2> operator-(const T2 &,
+                                          const vector_dense<T2> &);
+
+        // operator *
+        vector_dense<T> operator*(const vector_dense<T> &) const;
+
+        vector_dense<T> operator*(const T &) const;
+
+        template<typename T2>
+        friend vector_dense<T2> operator*(const T2 &,
+                                          const vector_dense<T2> &);
+
+        // operator /
+        vector_dense<T> operator/(const vector_dense<T> &) const;
+
+        vector_dense<T> operator/(const T &) const;
+
+        template<typename T2>
+        friend vector_dense<T2> operator/(const T2 &,
+                                          const vector_dense<T2> &);
+
+        // operator ()
+        T operator()(const uint64_t &) const;
+
+        // operator []
+        T &operator[](const uint64_t &) const;
+
+        // operator +=
+        vector_dense<T> operator+=(const vector_dense<T> &);
+
+        vector_dense<T> operator+=(const T &);
+
+        // operator -=
+        vector_dense<T> operator-=(const vector_dense<T> &);
+
+        vector_dense<T> operator-=(const T &);
+
+        // operator *=
+        vector_dense<T> operator*=(const vector_dense<T> &);
+
+        vector_dense<T> operator*=(const T &);
+
+        // operator /=
+        vector_dense<T> operator/=(const vector_dense<T> &);
+
+        vector_dense<T> operator/=(const T &);
+
+        // operator ++
+        vector_dense<T> operator++();
+
+        vector_dense<T> operator++(int);
+
+        // operator --
+        vector_dense<T> operator--();
+
+        vector_dense<T> operator--(int);
+
+        // operator ==
+        bool operator==(const vector_dense<T> &) const;
+
+        bool operator==(const T &) const;
+
+        // operator !=
+        bool operator!=(const vector_dense<T> &) const;
+
+        bool operator!=(const T &) const;
+
+
+        //=====//
+        // STL //
+        //=====//
+
+        T &at(const uint64_t &);
+
+        const T &at(const uint64_t &) const;
+
+        T &back();
+
+        const T &back() const;
+
+        T *begin();
+
+        const T *begin() const;
+
+        void clear() noexcept;
+
+        bool empty() const noexcept;
+
+        T *end();
+
+        const T *end() const;
+
+        T &front();
+
+        const T &front() const;
+
+        uint64_t size() const noexcept;
+
+        void swap(vector_dense<T> &);
+
+        //===============//
+        // algebra_dense //
+        //===============//
+
+        vector_dense<T> plus(const vector_dense<T> &, const bool & = false) const;
+
+        vector_dense<T> plus(const T &, const bool & = false) const;
+
+        vector_dense<T> times(const vector_dense<T> &, const bool & = false) const;
+
+        vector_dense<T> times(const T &, const bool & = false) const;
+
+        vector_dense<T> subtract(const vector_dense<T> &, const bool & = false) const;
+
+        vector_dense<T> subtract(const T &, const bool & = false) const;
+
+        vector_dense<T> divide(const vector_dense<T> &, const bool & = false) const;
+
+        vector_dense<T> divide(const T &, const bool & = false) const;
 
     private:
 
@@ -219,22 +218,22 @@ namespace sep {
         // help functions //
         //================//
 
-//        void vector_dense_transform(vector_dense<T> &vec_in_out,
-//                                    std::function<T(T, T)> fun,
-//                                    const bool &) const;
-//
-//        void vector_dense_transform(const vector_dense<T> &vec_in,
-//                                    vector_dense<T> &vec_out,
-//                                    std::function<T(T, T)> fun,
-//                                    const bool &) const;
-//
-//        void set(const T &);
-//
-//        void set(const vector_dense<T> &);
-//
-//        bool equal_exact(const vector_dense<T> &) const;
-//
-//        bool equal_exact(const T &) const;
+        void vector_dense_transform(vector_dense<T> &vec_in_out,
+                                    std::function<T(T, T)> fun,
+                                    const bool &) const;
+
+        void vector_dense_transform(const vector_dense<T> &vec_in,
+                                    vector_dense<T> &vec_out,
+                                    std::function<T(T, T)> fun,
+                                    const bool &) const;
+
+        void set(const T &);
+
+        void set(const vector_dense<T> &);
+
+        bool equal_exact(const vector_dense<T> &) const;
+
+        bool equal_exact(const T &) const;
     };
 }
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-    g++-7.1.0   -g                  \
+    g++-7.2.0   -g                  \
                 -O0                 \
                 -Wall               \
                 -std=gnu++14        \
