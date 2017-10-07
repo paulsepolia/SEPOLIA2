@@ -8,10 +8,8 @@
 template<typename T>
 inline void spl::vector_dense<T>::allocate(const uint64_t &dim) {
 
-    if (_is_alloc) delete[] _vdp;
-
     _dimension = dim;
-    _vdp = new T[dim];
+    _vdsp.reset(new T[dim]);
     _is_alloc = true;
 }
 
@@ -28,10 +26,8 @@ inline bool spl::vector_dense<T>::is_allocated() const {
 template<typename T>
 inline void spl::vector_dense<T>::deallocate() {
 
-    if (_is_alloc) delete[] _vdp;
-
     _dimension = 0;
-    _vdp = 0;
+    _vdsp.reset();
     _is_alloc = false;
 }
 

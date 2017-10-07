@@ -17,7 +17,7 @@ do
         rm x_gnu_$var
     fi
 
-    g++-7.1.0   -O3                             \
+    g++-7.2.0   -O3                             \
                 -Wall                           \
                 -std=gnu++14                    \
                 -fopenmp                        \
