@@ -5,7 +5,7 @@
 #include <functional>
 #include "../parameters/parameters.h"
 
-namespace spl {
+namespace sep {
 
     template<typename T>
     class vector_dense {
@@ -31,12 +31,6 @@ namespace spl {
         // destructor
         virtual ~vector_dense();
 
-        //=====//
-        // get //
-        //=====//
-
-//        T get_element(const uint64_t &) const;
-//
         //========//
         // memory //
         //========//
@@ -48,6 +42,14 @@ namespace spl {
         void deallocate();
 
         bool is_deallocated() const;
+
+        //==========//
+        // get, set //
+        //==========//
+
+        T get_element(const uint64_t &) const;
+        void set_element(const uint64_t &, const T &);
+
 //
 //        //===========//
 //        // operators //
@@ -150,11 +152,6 @@ namespace spl {
 //
 //        bool operator!=(const T &) const;
 //
-//        //=====//
-//        // set //
-//        //=====//
-//
-//        void set_element(const uint64_t &, const T &);
 //
 //        //=====//
 //        // STL //

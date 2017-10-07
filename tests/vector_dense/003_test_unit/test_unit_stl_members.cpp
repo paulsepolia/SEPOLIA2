@@ -15,7 +15,7 @@ const int64_t VAL_TEST3(123456);
 
 TEST(vd_at_modify_access_elements, STL_members) {
 
-    spl::vector_dense<double> vd(DIM_COMM);
+    sep::vector_dense<double> vd(DIM_COMM);
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
         vd.at(i) = VAL_TEST1;
@@ -27,7 +27,7 @@ TEST(vd_at_modify_access_elements, STL_members) {
 
 TEST(vd_at_access_elements_const_vector, STL_members) {
 
-    const spl::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
+    const sep::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
 
     for (uint64_t i = 0; i < DIM_COMM; i++) { ;
         EXPECT_EQ(VAL_TEST1, vd.at(i));
@@ -38,7 +38,7 @@ TEST(vd_at_access_elements_const_vector, STL_members) {
 
 TEST(vd_back_access_element, STL_members) {
 
-    spl::vector_dense<double> vd(DIM_COMM);
+    sep::vector_dense<double> vd(DIM_COMM);
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
         vd.at(i) = static_cast<double>(i);
@@ -54,7 +54,7 @@ TEST(vd_back_access_element, STL_members) {
 
 TEST(vd_back_access_element_const_vector, STL_members) {
 
-    const spl::vector_dense<double> vd(DIM_COMM, 100.0);
+    const sep::vector_dense<double> vd(DIM_COMM, 100.0);
 
     EXPECT_EQ(vd.back(), 100.0);
     EXPECT_EQ(vd.back(), vd.at(DIM_COMM - 1));
@@ -66,7 +66,7 @@ TEST(vd_back_access_element_const_vector, STL_members) {
 
 TEST(vd_begin_access_elements, STL_members) {
 
-    spl::vector_dense<double> vd(DIM_COMM);
+    sep::vector_dense<double> vd(DIM_COMM);
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
         vd.at(i) = static_cast<double>(i);
@@ -81,7 +81,7 @@ TEST(vd_begin_access_elements, STL_members) {
 
 TEST(vd_begin_access_elements_const_vector, STL_members) {
 
-    const spl::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
+    const sep::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
         EXPECT_EQ(*(vd.begin() + i), vd.at(i));
@@ -92,7 +92,7 @@ TEST(vd_begin_access_elements_const_vector, STL_members) {
 
 TEST(vd_begin_modify_elements, STL_members) {
 
-    spl::vector_dense<double> vd(DIM_COMM);
+    sep::vector_dense<double> vd(DIM_COMM);
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
         *(vd.begin() + i) = static_cast<double>(i);
@@ -107,7 +107,7 @@ TEST(vd_begin_modify_elements, STL_members) {
 
 TEST(vd_clear_default_constructor, STL_members) {
 
-    spl::vector_dense<double> vd;
+    sep::vector_dense<double> vd;
 
     vd.clear();
 
@@ -139,7 +139,7 @@ TEST(vd_clear_default_constructor, STL_members) {
 
 TEST(vd_clear_constructor_with_one_argument, STL_members) {
 
-    spl::vector_dense<double> vd(DIM_COMM);
+    sep::vector_dense<double> vd(DIM_COMM);
 
     vd.clear();
 
@@ -171,7 +171,7 @@ TEST(vd_clear_constructor_with_one_argument, STL_members) {
 
 TEST(vd_clear_constructor_with_two_arguments, STL_members) {
 
-    spl::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
 
     vd.clear();
 
@@ -203,7 +203,7 @@ TEST(vd_clear_constructor_with_two_arguments, STL_members) {
 
 TEST(vd_end_access_elements, STL_members) {
 
-    spl::vector_dense<double> vd(DIM_COMM);
+    sep::vector_dense<double> vd(DIM_COMM);
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
         vd.at(i) = static_cast<double>(i);
@@ -218,7 +218,7 @@ TEST(vd_end_access_elements, STL_members) {
 
 TEST(vd_end_access_elements_const_vector, STL_members) {
 
-    const spl::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
+    const sep::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
         EXPECT_EQ(*(vd.end() - 1 - i), vd.at(DIM_COMM - 1 - i));
@@ -229,7 +229,7 @@ TEST(vd_end_access_elements_const_vector, STL_members) {
 
 TEST(vd_end_modify_elements, STL_members) {
 
-    spl::vector_dense<double> vd(DIM_COMM);
+    sep::vector_dense<double> vd(DIM_COMM);
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
         *(vd.end() - 1 - i) = static_cast<double>(DIM_COMM - 1 - i);
@@ -244,7 +244,7 @@ TEST(vd_end_modify_elements, STL_members) {
 
 TEST(vd_begin_end_for_loop, STL_members) {
 
-    spl::vector_dense<double> vd(DIM_COMM);
+    sep::vector_dense<double> vd(DIM_COMM);
 
     double val(0);
     for (auto it = vd.begin(); it != vd.end(); it++) {
@@ -261,7 +261,7 @@ TEST(vd_begin_end_for_loop, STL_members) {
 
 TEST(vd_begin_end_for_loop_const_vector, STL_members) {
 
-    const spl::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
+    const sep::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
 
     for (auto it = vd.begin(); it != vd.end(); it++) {
         EXPECT_EQ(*it, VAL_TEST1);
@@ -272,15 +272,15 @@ TEST(vd_begin_end_for_loop_const_vector, STL_members) {
 
 TEST(vd_empty, STL_members) {
 
-    spl::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
 
     EXPECT_FALSE(vd1.empty());
 
-    spl::vector_dense<double> vd2(DIM_COMM);
+    sep::vector_dense<double> vd2(DIM_COMM);
 
     EXPECT_FALSE(vd2.empty());
 
-    spl::vector_dense<double> vd3;
+    sep::vector_dense<double> vd3;
 
     EXPECT_TRUE(vd3.empty());
 }
@@ -289,15 +289,15 @@ TEST(vd_empty, STL_members) {
 
 TEST(vd_empty_const_vectors, STL_members) {
 
-    const spl::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
+    const sep::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
 
     EXPECT_FALSE(vd1.empty());
 
-    const spl::vector_dense<double> vd2(DIM_COMM);
+    const sep::vector_dense<double> vd2(DIM_COMM);
 
     EXPECT_FALSE(vd2.empty());
 
-    const spl::vector_dense<double> vd3;
+    const sep::vector_dense<double> vd3;
 
     EXPECT_TRUE(vd3.empty());
 }
@@ -306,7 +306,7 @@ TEST(vd_empty_const_vectors, STL_members) {
 
 TEST(vd_for_loop_begin_end, STL_members) {
 
-    spl::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
 
     for (auto it = vd.begin(); it != vd.end(); it++) {
         EXPECT_EQ(*it, VAL_TEST1);
@@ -330,7 +330,7 @@ TEST(vd_for_loop_begin_end, STL_members) {
 
 TEST(vd_for_loop_auto, STL_members) {
 
-    spl::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
 
     for (const auto &elem: vd) {
         EXPECT_EQ(elem, VAL_TEST1);
@@ -358,7 +358,7 @@ TEST(vd_for_loop_auto, STL_members) {
 
 TEST(vd_front_access_element, STL_members) {
 
-    spl::vector_dense<double> vd(DIM_COMM);
+    sep::vector_dense<double> vd(DIM_COMM);
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
         vd.at(i) = static_cast<double>(i);
@@ -374,7 +374,7 @@ TEST(vd_front_access_element, STL_members) {
 
 TEST(vd_front_access_element_const_vector, STL_members) {
 
-    const spl::vector_dense<double> vd(DIM_COMM, 100.0);
+    const sep::vector_dense<double> vd(DIM_COMM, 100.0);
 
     EXPECT_EQ(vd.front(), 100.0);
     EXPECT_EQ(vd.front(), vd.at(0));
@@ -386,7 +386,7 @@ TEST(vd_front_access_element_const_vector, STL_members) {
 
 TEST(vd_size_default_constructor, STL_members) {
 
-    spl::vector_dense<double> vd;
+    sep::vector_dense<double> vd;
 
     EXPECT_EQ(vd.size(), 0);
 
@@ -401,7 +401,7 @@ TEST(vd_size_default_constructor, STL_members) {
 
 TEST(vd_size_constructor_one_argument, STL_members) {
 
-    spl::vector_dense<double> vd(DIM_COMM);
+    sep::vector_dense<double> vd(DIM_COMM);
 
     EXPECT_EQ(vd.size(), DIM_COMM);
 
@@ -416,7 +416,7 @@ TEST(vd_size_constructor_one_argument, STL_members) {
 
 TEST(vd_size_constructor_two_arguments, STL_members) {
 
-    spl::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
 
     EXPECT_EQ(vd.size(), DIM_COMM);
 
@@ -431,12 +431,12 @@ TEST(vd_size_constructor_two_arguments, STL_members) {
 
 TEST(vd_swap_default_constructor_same_size, STL_members) {
 
-    spl::vector_dense<double> vd1;
+    sep::vector_dense<double> vd1;
 
     vd1.allocate(DIM_COMM);
     vd1 = VAL_TEST1;
 
-    spl::vector_dense<double> vd2;
+    sep::vector_dense<double> vd2;
 
     vd2.allocate(DIM_COMM);
     vd2 = VAL_TEST2;
@@ -455,12 +455,12 @@ TEST(vd_swap_default_constructor_same_size, STL_members) {
 
 TEST(vd_swap_default_constructor_different_size, STL_members) {
 
-    spl::vector_dense<double> vd1;
+    sep::vector_dense<double> vd1;
 
     vd1.allocate(DIM1);
     vd1 = VAL_TEST1;
 
-    spl::vector_dense<double> vd2;
+    sep::vector_dense<double> vd2;
 
     vd2.allocate(DIM2);
     vd2 = VAL_TEST2;
@@ -479,11 +479,11 @@ TEST(vd_swap_default_constructor_different_size, STL_members) {
 
 TEST(vd_swap_constructor_one_same_size, STL_members) {
 
-    spl::vector_dense<double> vd1(DIM_COMM);
+    sep::vector_dense<double> vd1(DIM_COMM);
 
     vd1 = VAL_TEST1;
 
-    spl::vector_dense<double> vd2(DIM_COMM);
+    sep::vector_dense<double> vd2(DIM_COMM);
 
     vd2 = VAL_TEST2;
 
@@ -501,11 +501,11 @@ TEST(vd_swap_constructor_one_same_size, STL_members) {
 
 TEST(vd_swap_constructor_one_different_size, STL_members) {
 
-    spl::vector_dense<double> vd1(DIM1);
+    sep::vector_dense<double> vd1(DIM1);
 
     vd1 = VAL_TEST1;
 
-    spl::vector_dense<double> vd2(DIM2);
+    sep::vector_dense<double> vd2(DIM2);
 
     vd2 = VAL_TEST2;
 
@@ -523,8 +523,8 @@ TEST(vd_swap_constructor_one_different_size, STL_members) {
 
 TEST(vd_swap_constructor_two_same_size, STL_members) {
 
-    spl::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> vd2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd2(DIM_COMM, VAL_TEST2);
 
     vd1.swap(vd2);
 
@@ -540,8 +540,8 @@ TEST(vd_swap_constructor_two_same_size, STL_members) {
 
 TEST(vd_swap_constructor_two_different_size, STL_members) {
 
-    spl::vector_dense<double> vd1(DIM1, VAL_TEST1);
-    spl::vector_dense<double> vd2(DIM2, VAL_TEST2);
+    sep::vector_dense<double> vd1(DIM1, VAL_TEST1);
+    sep::vector_dense<double> vd2(DIM2, VAL_TEST2);
 
     vd1.swap(vd2);
 

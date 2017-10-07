@@ -64,7 +64,7 @@ void fun_declaration_via_default_constructor(const uint64_t &trials, const uint3
     const auto TRIALS(trials);
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        spl::vector_dense<double> v1;
+        sep::vector_dense<double> v1;
     }
 
     auto t2(std::chrono::system_clock::now());
@@ -93,7 +93,7 @@ void fun_alloc_set_via_constructor(const uint64_t &trials,
     const auto TEST_VAL(val);
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        spl::vector_dense<double> v1(DIM_VEC, TEST_VAL);
+        sep::vector_dense<double> v1(DIM_VEC, TEST_VAL);
     }
 
     auto t2(std::chrono::system_clock::now());
@@ -118,7 +118,7 @@ void fun_alloc_set_dealloc(const uint64_t &trials,
     const auto TEST_VAL(val);
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        spl::vector_dense<double> v1;
+        sep::vector_dense<double> v1;
         v1.allocate(DIM_VEC);
         v1 = TEST_VAL;
     }
@@ -141,14 +141,14 @@ void fun_declaration_via_constructor_full(const uint64_t &trials,
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL(val);
 
-    spl::vector_dense<double> v1;
+    sep::vector_dense<double> v1;
     v1.allocate(DIM_VEC);
     v1 = TEST_VAL;
 
     auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        spl::vector_dense<double> v2(v1);
+        sep::vector_dense<double> v2(v1);
     }
 
     auto t2(std::chrono::system_clock::now());
@@ -169,14 +169,14 @@ void fun_set_via_assignment_operator(const uint64_t &trials,
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL(val);
 
-    spl::vector_dense<double> v1;
+    sep::vector_dense<double> v1;
     v1.allocate(DIM_VEC);
     v1 = TEST_VAL;
 
     auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        spl::vector_dense<double> v2;
+        sep::vector_dense<double> v2;
         v2 = v1;
     }
 
@@ -197,7 +197,7 @@ void fun_set_vector_element_by_element(const uint64_t &trials,
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL(1234.5678);
 
-    spl::vector_dense<double> v1(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -224,7 +224,7 @@ void fun_set_vector_element_by_element_square(const uint64_t &trials,
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL(1234.5678);
 
-    spl::vector_dense<double> v1(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -255,8 +255,8 @@ void fun_get_vector_element_by_element_square(const uint64_t &trials,
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL(1234.5678);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL);
-    spl::vector_dense<double> v2(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL);
+    sep::vector_dense<double> v2(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -283,8 +283,8 @@ void fun_get_vector_element_by_element_curly(const uint64_t &trials,
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL(1234.5678);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL);
-    spl::vector_dense<double> v2(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL);
+    sep::vector_dense<double> v2(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -316,9 +316,9 @@ void fun_add_vector_vector_using_operator(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    spl::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    spl::vector_dense<double> v3(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -344,9 +344,9 @@ void fun_add_vector_vector_element_by_element(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    spl::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    spl::vector_dense<double> v3(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -374,9 +374,9 @@ void fun_add_vector_vector_plus_true(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    spl::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    spl::vector_dense<double> v3(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -402,9 +402,9 @@ void fun_add_vector_vector_plus_false(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    spl::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    spl::vector_dense<double> v3(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -434,9 +434,9 @@ void fun_times_vector_vector_using_operator(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    spl::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    spl::vector_dense<double> v3(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -462,9 +462,9 @@ void fun_times_vector_vector_element_by_element(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    spl::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    spl::vector_dense<double> v3(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -492,9 +492,9 @@ void fun_times_vector_vector_times_true(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    spl::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    spl::vector_dense<double> v3(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -520,9 +520,9 @@ void fun_times_vector_vector_times_false(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    spl::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    spl::vector_dense<double> v3(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -552,9 +552,9 @@ void fun_subtract_vector_vector_using_operator(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    spl::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    spl::vector_dense<double> v3(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -580,9 +580,9 @@ void fun_subtract_vector_vector_element_by_element(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    spl::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    spl::vector_dense<double> v3(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -610,9 +610,9 @@ void fun_subtract_vector_vector_subtract_true(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    spl::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    spl::vector_dense<double> v3(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -638,9 +638,9 @@ void fun_subtract_vector_vector_subtract_false(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    spl::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    spl::vector_dense<double> v3(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -670,9 +670,9 @@ void fun_divide_vector_vector_using_operator(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    spl::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    spl::vector_dense<double> v3(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -698,9 +698,9 @@ void fun_divide_vector_vector_element_by_element(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    spl::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    spl::vector_dense<double> v3(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -728,9 +728,9 @@ void fun_divide_vector_vector_divide_true(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    spl::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    spl::vector_dense<double> v3(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 
@@ -756,9 +756,9 @@ void fun_divide_vector_vector_divide_false(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    spl::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    spl::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    spl::vector_dense<double> v3(DIM_VEC);
+    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
 

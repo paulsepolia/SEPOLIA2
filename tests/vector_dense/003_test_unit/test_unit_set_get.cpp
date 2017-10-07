@@ -13,7 +13,7 @@ const int64_t VAL_TEST3(123456);
 
 TEST(vd_set_element_via_constructor_and_get_it_double, set_get) {
 
-    spl::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd(DIM_COMM, VAL_TEST1);
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
@@ -29,7 +29,7 @@ TEST(vd_set_element_via_constructor_and_get_it_double, set_get) {
 
 TEST(vd_set_element_via_constructor_and_get_it_uint64_t, set_get) {
 
-    spl::vector_dense<uint64_t> vd(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<uint64_t> vd(DIM_COMM, VAL_TEST2);
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
@@ -45,7 +45,7 @@ TEST(vd_set_element_via_constructor_and_get_it_uint64_t, set_get) {
 
 TEST(vd_set_element_via_constructor_and_get_it_int64_t, set_get) {
 
-    spl::vector_dense<uint64_t> vd(DIM_COMM, VAL_TEST3);
+    sep::vector_dense<uint64_t> vd(DIM_COMM, VAL_TEST3);
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
@@ -61,7 +61,7 @@ TEST(vd_set_element_via_constructor_and_get_it_int64_t, set_get) {
 
 TEST(vd_set_dimension_via_constructor_and_get_it_double, set_get) {
 
-    spl::vector_dense<double> vd(DIM_COMM);
+    sep::vector_dense<double> vd(DIM_COMM);
 
     EXPECT_EQ(DIM_COMM, vd.size());
 }
@@ -70,7 +70,7 @@ TEST(vd_set_dimension_via_constructor_and_get_it_double, set_get) {
 
 TEST(vd_set_dimension_via_constructor_and_get_it_uint64_t, set_get) {
 
-    spl::vector_dense<uint64_t> vd(DIM_COMM);
+    sep::vector_dense<uint64_t> vd(DIM_COMM);
 
     EXPECT_EQ(DIM_COMM, vd.size());
 }
@@ -79,7 +79,7 @@ TEST(vd_set_dimension_via_constructor_and_get_it_uint64_t, set_get) {
 
 TEST(vd_set_dimension_via_constructor_and_get_it_int64_t, set_get) {
 
-    spl::vector_dense<int64_t> vd(DIM_COMM);
+    sep::vector_dense<int64_t> vd(DIM_COMM);
 
     EXPECT_EQ(DIM_COMM, vd.size());
 }
@@ -88,7 +88,7 @@ TEST(vd_set_dimension_via_constructor_and_get_it_int64_t, set_get) {
 
 TEST(vd_set_dimension_via_allocate_and_get_it_double, set_get) {
 
-    spl::vector_dense<double> vd;
+    sep::vector_dense<double> vd;
     vd.allocate(DIM_COMM);
 
     EXPECT_EQ(DIM_COMM, vd.size());
@@ -98,7 +98,7 @@ TEST(vd_set_dimension_via_allocate_and_get_it_double, set_get) {
 
 TEST(vd_set_dimension_via_allocate_and_get_it_uint64_t, set_get) {
 
-    spl::vector_dense<uint64_t> vd;
+    sep::vector_dense<uint64_t> vd;
     vd.allocate(DIM_COMM);
 
     EXPECT_EQ(DIM_COMM, vd.size());
@@ -108,7 +108,7 @@ TEST(vd_set_dimension_via_allocate_and_get_it_uint64_t, set_get) {
 
 TEST(vd_set_dimension_via_allocate_and_get_it_int64_t, set_get) {
 
-    spl::vector_dense<int64_t> vd;
+    sep::vector_dense<int64_t> vd;
     vd.allocate(DIM_COMM);
 
     EXPECT_EQ(DIM_COMM, vd.size());
@@ -118,7 +118,7 @@ TEST(vd_set_dimension_via_allocate_and_get_it_int64_t, set_get) {
 
 TEST(vd_set_element_and_get_it_double, set_get) {
 
-    spl::vector_dense<double> vd(DIM_COMM);
+    sep::vector_dense<double> vd(DIM_COMM);
 
     EXPECT_EQ(DIM_COMM, vd.size());
 
@@ -151,7 +151,7 @@ TEST(vd_set_element_and_get_it_double, set_get) {
 
 TEST(vd_set_element_and_get_it_uint64_t, set_get) {
 
-    spl::vector_dense<uint64_t> vd(DIM_COMM);
+    sep::vector_dense<uint64_t> vd(DIM_COMM);
 
     EXPECT_EQ(DIM_COMM, vd.size());
 
@@ -184,7 +184,7 @@ TEST(vd_set_element_and_get_it_uint64_t, set_get) {
 
 TEST(vd_set_element_and_get_it_int64_t, set_get) {
 
-    spl::vector_dense<int64_t> vd(DIM_COMM);
+    sep::vector_dense<int64_t> vd(DIM_COMM);
 
     EXPECT_EQ(DIM_COMM, vd.size());
 
@@ -217,8 +217,8 @@ TEST(vd_set_element_and_get_it_int64_t, set_get) {
 
 TEST(vd_set_vector_to_another_using_assignment_operator_double, set_get) {
 
-    spl::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> vd2;
+    sep::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd2;
 
     EXPECT_EQ(DIM_COMM, vd1.size());
 
@@ -241,8 +241,8 @@ TEST(vd_set_vector_to_another_using_assignment_operator_double, set_get) {
 
 TEST(vd_set_vector_to_another_using_assignment_operator_uint64_t, set_get) {
 
-    spl::vector_dense<uint64_t> vd1(DIM_COMM, VAL_TEST2);
-    spl::vector_dense<uint64_t> vd2;
+    sep::vector_dense<uint64_t> vd1(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<uint64_t> vd2;
 
     EXPECT_EQ(DIM_COMM, vd1.size());
 
@@ -265,8 +265,8 @@ TEST(vd_set_vector_to_another_using_assignment_operator_uint64_t, set_get) {
 
 TEST(vd_set_vector_to_another_using_assignment_operator_int64_t, set_get) {
 
-    spl::vector_dense<int64_t> vd1(DIM_COMM, VAL_TEST3);
-    spl::vector_dense<int64_t> vd2;
+    sep::vector_dense<int64_t> vd1(DIM_COMM, VAL_TEST3);
+    sep::vector_dense<int64_t> vd2;
 
     EXPECT_EQ(DIM_COMM, vd1.size());
 
@@ -289,7 +289,7 @@ TEST(vd_set_vector_to_another_using_assignment_operator_int64_t, set_get) {
 
 TEST(vd_set_vector_to_element_using_assignment_operator_double, set_get) {
 
-    spl::vector_dense<double> vd1;
+    sep::vector_dense<double> vd1;
     vd1.allocate(DIM_COMM);
 
     EXPECT_EQ(DIM_COMM, vd1.size());
@@ -303,7 +303,7 @@ TEST(vd_set_vector_to_element_using_assignment_operator_double, set_get) {
         EXPECT_EQ(vd1[i], VAL_TEST1);
     }
 
-    spl::vector_dense<double> vd2;
+    sep::vector_dense<double> vd2;
     vd2 = vd1;
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
@@ -320,7 +320,7 @@ TEST(vd_set_vector_to_element_using_assignment_operator_double, set_get) {
 
 TEST(vd_set_vector_to_element_using_assignment_operator_uint64_t, set_get) {
 
-    spl::vector_dense<uint64_t> vd1;
+    sep::vector_dense<uint64_t> vd1;
     vd1.allocate(DIM_COMM);
 
     EXPECT_EQ(DIM_COMM, vd1.size());
@@ -334,7 +334,7 @@ TEST(vd_set_vector_to_element_using_assignment_operator_uint64_t, set_get) {
         EXPECT_EQ(vd1[i], VAL_TEST2);
     }
 
-    spl::vector_dense<uint64_t> vd2;
+    sep::vector_dense<uint64_t> vd2;
     vd2 = vd1;
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
@@ -351,7 +351,7 @@ TEST(vd_set_vector_to_element_using_assignment_operator_uint64_t, set_get) {
 
 TEST(vd_set_vector_to_element_using_assignment_operator_int64_t, set_get) {
 
-    spl::vector_dense<int64_t> vd1;
+    sep::vector_dense<int64_t> vd1;
     vd1.allocate(DIM_COMM);
 
     EXPECT_EQ(DIM_COMM, vd1.size());
@@ -365,7 +365,7 @@ TEST(vd_set_vector_to_element_using_assignment_operator_int64_t, set_get) {
         EXPECT_EQ(vd1[i], VAL_TEST3);
     }
 
-    spl::vector_dense<int64_t> vd2;
+    sep::vector_dense<int64_t> vd2;
     vd2 = vd1;
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
@@ -382,11 +382,11 @@ TEST(vd_set_vector_to_element_using_assignment_operator_int64_t, set_get) {
 
 TEST(vd_set_vector_via_copy_constructor_double, set_get) {
 
-    spl::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
 
     EXPECT_EQ(DIM_COMM, vd1.size());
 
-    spl::vector_dense<double> vd2(vd1);
+    sep::vector_dense<double> vd2(vd1);
 
     EXPECT_EQ(vd1.size(), DIM_COMM);
 
@@ -405,11 +405,11 @@ TEST(vd_set_vector_via_copy_constructor_double, set_get) {
 
 TEST(vd_set_vector_via_copy_constructor_uint64_t, set_get) {
 
-    spl::vector_dense<uint64_t> vd1(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<uint64_t> vd1(DIM_COMM, VAL_TEST2);
 
     EXPECT_EQ(DIM_COMM, vd1.size());
 
-    spl::vector_dense<uint64_t> vd2(vd1);
+    sep::vector_dense<uint64_t> vd2(vd1);
 
     EXPECT_EQ(vd1.size(), DIM_COMM);
 
@@ -428,11 +428,11 @@ TEST(vd_set_vector_via_copy_constructor_uint64_t, set_get) {
 
 TEST(vd_set_vector_via_copy_constructor_int64_t, set_get) {
 
-    spl::vector_dense<int64_t> vd1(DIM_COMM, VAL_TEST3);
+    sep::vector_dense<int64_t> vd1(DIM_COMM, VAL_TEST3);
 
     EXPECT_EQ(DIM_COMM, vd1.size());
 
-    spl::vector_dense<int64_t> vd2(vd1);
+    sep::vector_dense<int64_t> vd2(vd1);
 
     EXPECT_EQ(vd1.size(), DIM_COMM);
 
@@ -451,11 +451,11 @@ TEST(vd_set_vector_via_copy_constructor_int64_t, set_get) {
 
 TEST(vd_set_vector_via_move_constructor_double, set_get) {
 
-    spl::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
 
     EXPECT_EQ(DIM_COMM, vd1.size());
 
-    spl::vector_dense<double> vd2(std::move(vd1));
+    sep::vector_dense<double> vd2(std::move(vd1));
 
     EXPECT_EQ(vd1.is_allocated(), false);
     EXPECT_EQ(vd1.is_deallocated(), true);
@@ -475,11 +475,11 @@ TEST(vd_set_vector_via_move_constructor_double, set_get) {
 
 TEST(vd_set_vector_via_move_constructor_uint64_t, set_get) {
 
-    spl::vector_dense<uint64_t> vd1(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<uint64_t> vd1(DIM_COMM, VAL_TEST2);
 
     EXPECT_EQ(DIM_COMM, vd1.size());
 
-    spl::vector_dense<uint64_t> vd2(std::move(vd1));
+    sep::vector_dense<uint64_t> vd2(std::move(vd1));
 
     EXPECT_EQ(vd1.is_allocated(), false);
     EXPECT_EQ(vd1.is_deallocated(), true);
@@ -499,11 +499,11 @@ TEST(vd_set_vector_via_move_constructor_uint64_t, set_get) {
 
 TEST(vd_set_vector_via_move_constructor_int64_t, set_get) {
 
-    spl::vector_dense<int64_t> vd1(DIM_COMM, VAL_TEST3);
+    sep::vector_dense<int64_t> vd1(DIM_COMM, VAL_TEST3);
 
     EXPECT_EQ(DIM_COMM, vd1.size());
 
-    spl::vector_dense<int64_t> vd2(std::move(vd1));
+    sep::vector_dense<int64_t> vd2(std::move(vd1));
 
     EXPECT_EQ(vd1.is_allocated(), false);
     EXPECT_EQ(vd1.is_deallocated(), true);
@@ -523,11 +523,11 @@ TEST(vd_set_vector_via_move_constructor_int64_t, set_get) {
 
 TEST(vd_set_vector_via_move_assignment_operator_double, set_get) {
 
-    spl::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
 
     EXPECT_EQ(DIM_COMM, vd1.size());
 
-    spl::vector_dense<double> vd2;
+    sep::vector_dense<double> vd2;
     vd2 = std::move(vd1);
 
     EXPECT_EQ(vd1.is_allocated(), false);
@@ -548,11 +548,11 @@ TEST(vd_set_vector_via_move_assignment_operator_double, set_get) {
 
 TEST(vd_set_vector_via_move_assignment_operator_uint64_t, set_get) {
 
-    spl::vector_dense<uint64_t> vd1(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<uint64_t> vd1(DIM_COMM, VAL_TEST2);
 
     EXPECT_EQ(DIM_COMM, vd1.size());
 
-    spl::vector_dense<uint64_t> vd2;
+    sep::vector_dense<uint64_t> vd2;
     vd2 = std::move(vd1);
 
     EXPECT_EQ(vd1.is_allocated(), false);
@@ -573,11 +573,11 @@ TEST(vd_set_vector_via_move_assignment_operator_uint64_t, set_get) {
 
 TEST(vd_set_vector_via_move_assignment_operator_int64_t, set_get) {
 
-    spl::vector_dense<int64_t> vd1(DIM_COMM, VAL_TEST3);
+    sep::vector_dense<int64_t> vd1(DIM_COMM, VAL_TEST3);
 
     EXPECT_EQ(DIM_COMM, vd1.size());
 
-    spl::vector_dense<int64_t> vd2;
+    sep::vector_dense<int64_t> vd2;
     vd2 = std::move(vd1);
 
     EXPECT_EQ(vd1.is_allocated(), false);
@@ -598,7 +598,7 @@ TEST(vd_set_vector_via_move_assignment_operator_int64_t, set_get) {
 
 TEST(vd_set_vector_via_std_vector_copy, set_get) {
 
-    spl::vector_dense<double> vd;
+    sep::vector_dense<double> vd;
     std::vector<double> vec_std;
 
     for (uint64_t i = 0; i != DIM_COMM; i++) {
@@ -623,7 +623,7 @@ TEST(vd_set_vector_via_std_vector_copy, set_get) {
 
 TEST(vd_set_vector_via_std_vector_copy_already_alloc, set_get) {
 
-    spl::vector_dense<double> vd(DIM_COMM + 100);
+    sep::vector_dense<double> vd(DIM_COMM + 100);
     std::vector<double> vec_std;
 
     for (uint64_t i = 0; i != DIM_COMM; i++) {
@@ -648,7 +648,7 @@ TEST(vd_set_vector_via_std_vector_copy_already_alloc, set_get) {
 
 TEST(vd_set_vector_via_std_vector_move, set_get) {
 
-    spl::vector_dense<double> vd;
+    sep::vector_dense<double> vd;
     std::vector<double> vec_std;
 
     for (uint64_t i = 0; i != DIM_COMM; i++) {
@@ -672,7 +672,7 @@ TEST(vd_set_vector_via_std_vector_move, set_get) {
 
 TEST(vd_set_vector_via_std_vector_move_already_alloc, set_get) {
 
-    spl::vector_dense<double> vd(DIM_COMM + 100);
+    sep::vector_dense<double> vd(DIM_COMM + 100);
     std::vector<double> vec_std;
 
     for (uint64_t i = 0; i != DIM_COMM; i++) {

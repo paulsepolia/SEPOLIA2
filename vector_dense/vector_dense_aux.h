@@ -6,7 +6,7 @@
 //#include "../parameters/parameters.h"
 //
 //template<typename T>
-//inline void spl::vector_dense<T>::vector_dense_transform(spl::vector_dense<T> &vec_in_out,
+//inline void sep::vector_dense<T>::vector_dense_transform(sep::vector_dense<T> &vec_in_out,
 //                                                         std::function<T(T, T)> my_function,
 //                                                         const bool &par_flag) const {
 //
@@ -27,8 +27,8 @@
 //}
 //
 //template<typename T>
-//inline void spl::vector_dense<T>::vector_dense_transform(const spl::vector_dense<T> &vec_in,
-//                                                         spl::vector_dense<T> &vec_out,
+//inline void sep::vector_dense<T>::vector_dense_transform(const sep::vector_dense<T> &vec_in,
+//                                                         sep::vector_dense<T> &vec_out,
 //                                                         std::function<T(T, T)> my_function,
 //                                                         const bool &par_flag) const {
 //    if (par_flag) {
@@ -48,7 +48,7 @@
 //}
 //
 //template<typename T>
-//bool spl::vector_dense<T>::equal_exact(const spl::vector_dense<T> &vec) const {
+//bool sep::vector_dense<T>::equal_exact(const sep::vector_dense<T> &vec) const {
 //    if (_dimension != vec._dimension) return false;
 //
 //    bool flg(false);
@@ -78,11 +78,11 @@
 //}
 //
 //template<typename T>
-//bool spl::vector_dense<T>::equal_exact(const T &val) const {
+//bool sep::vector_dense<T>::equal_exact(const T &val) const {
 //
 //    if (_dimension == 0) return false;
 //
-//    spl::vector_dense<T> vec_tmp(_dimension, val);
+//    sep::vector_dense<T> vec_tmp(_dimension, val);
 //
 //    return equal_exact(vec_tmp);
 //}

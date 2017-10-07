@@ -11,7 +11,7 @@ const double VAL(123.456);
 
 TEST(constructor_with_no_arguments, constructors) {
 
-    spl::vector_dense<double> vd;
+    sep::vector_dense<double> vd;
 
     EXPECT_EQ(vd.is_allocated(), false);
     EXPECT_EQ(vd.is_deallocated(), true);
@@ -21,7 +21,7 @@ TEST(constructor_with_no_arguments, constructors) {
 
 TEST(constructor_with_one_argument, constructors) {
 
-    spl::vector_dense<double> vd(DIM);
+    sep::vector_dense<double> vd(DIM);
 
     EXPECT_EQ(vd.is_allocated(), true);
     EXPECT_EQ(vd.is_deallocated(), false);
@@ -31,7 +31,7 @@ TEST(constructor_with_one_argument, constructors) {
 
 TEST(constructor_with_two_arguments, constructors) {
 
-    spl::vector_dense<double> vd(DIM, VAL);
+    sep::vector_dense<double> vd(DIM, VAL);
 
     EXPECT_EQ(vd.is_allocated(), true);
     EXPECT_EQ(vd.is_deallocated(), false);

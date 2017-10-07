@@ -7,7 +7,7 @@
 //// copy std::vector assignment operator
 //
 //template<typename T>
-//spl::vector_dense<T> &spl::vector_dense<T>::operator=(const std::vector<T> &vec_std) {
+//sep::vector_dense<T> &sep::vector_dense<T>::operator=(const std::vector<T> &vec_std) {
 //
 //    const auto DIM(vec_std.size());
 //
@@ -22,7 +22,7 @@
 //// move std::vector assignment operator
 //
 //template<typename T>
-//spl::vector_dense<T> &spl::vector_dense<T>::operator=(std::vector<T> &&vec_std) {
+//sep::vector_dense<T> &sep::vector_dense<T>::operator=(std::vector<T> &&vec_std) {
 //
 //    const auto DIM(vec_std.size());
 //
@@ -37,10 +37,10 @@
 //// copy assignment operator
 //
 //template<typename T>
-//spl::vector_dense<T> &spl::vector_dense<T>::operator=(const spl::vector_dense<T> &vec) {
+//sep::vector_dense<T> &sep::vector_dense<T>::operator=(const sep::vector_dense<T> &vec) {
 //
 //    if (skz::DEBUG) {
-//        spl::check_allocation(vec);
+//        sep::check_allocation(vec);
 //    }
 //
 //    set(vec);
@@ -51,10 +51,10 @@
 //// element assignment operator
 //
 //template<typename T>
-//spl::vector_dense<T> &spl::vector_dense<T>::operator=(const T &val) {
+//sep::vector_dense<T> &sep::vector_dense<T>::operator=(const T &val) {
 //
 //    if (skz::DEBUG) {
-//        spl::check_allocation(*this);
+//        sep::check_allocation(*this);
 //    }
 //
 //    set(val);
@@ -65,10 +65,10 @@
 //// move assignment operator
 //
 //template<typename T>
-//spl::vector_dense<T> &spl::vector_dense<T>::operator=(spl::vector_dense<T> &&vec) {
+//sep::vector_dense<T> &sep::vector_dense<T>::operator=(sep::vector_dense<T> &&vec) {
 //
 //    if (skz::DEBUG) {
-//        spl::check_allocation(vec);
+//        sep::check_allocation(vec);
 //    }
 //
 //    if (this != &vec) {
@@ -86,9 +86,9 @@
 //// operator + # 1
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator+(const spl::vector_dense<T> &vec) const {
+//sep::vector_dense<T> sep::vector_dense<T>::operator+(const sep::vector_dense<T> &vec) const {
 //
-//    spl::vector_dense<T> vec_tmp(vec.size());
+//    sep::vector_dense<T> vec_tmp(vec.size());
 //    vec_tmp = plus(vec, true);
 //
 //    return std::move(vec_tmp);
@@ -97,9 +97,9 @@
 //// operator + # 2
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator+(const T &val) const {
+//sep::vector_dense<T> sep::vector_dense<T>::operator+(const T &val) const {
 //
-//    spl::vector_dense<T> vec_tmp(size());
+//    sep::vector_dense<T> vec_tmp(size());
 //    vec_tmp = plus(val, true);
 //
 //    return std::move(vec_tmp);
@@ -107,7 +107,7 @@
 //
 //// operator + # 3
 //
-//namespace spl {
+//namespace sep {
 //
 //    template<typename T>
 //    vector_dense <T> operator+(const T &val, const vector_dense <T> &vec) {
@@ -122,9 +122,9 @@
 //// operator - # 1
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator-(const spl::vector_dense<T> &vec) const {
+//sep::vector_dense<T> sep::vector_dense<T>::operator-(const sep::vector_dense<T> &vec) const {
 //
-//    spl::vector_dense<T> vec_tmp(vec.size());
+//    sep::vector_dense<T> vec_tmp(vec.size());
 //    vec_tmp = subtract(vec, true);
 //
 //    return std::move(vec_tmp);
@@ -133,9 +133,9 @@
 //// operator - # 2
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator-(const T &val) const {
+//sep::vector_dense<T> sep::vector_dense<T>::operator-(const T &val) const {
 //
-//    spl::vector_dense<T> vec_tmp(size());
+//    sep::vector_dense<T> vec_tmp(size());
 //    vec_tmp = subtract(val, true);
 //
 //    return std::move(vec_tmp);
@@ -143,7 +143,7 @@
 //
 //// operator - # 3
 //
-//namespace spl {
+//namespace sep {
 //
 //    template<typename T>
 //    vector_dense <T> operator-(const T &val, const vector_dense <T> &vec) {
@@ -158,9 +158,9 @@
 //// operator * # 1
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator*(const spl::vector_dense<T> &vec) const {
+//sep::vector_dense<T> sep::vector_dense<T>::operator*(const sep::vector_dense<T> &vec) const {
 //
-//    spl::vector_dense<T> vec_tmp(vec.size());
+//    sep::vector_dense<T> vec_tmp(vec.size());
 //    vec_tmp = times(vec, true);
 //
 //    return std::move(vec_tmp);
@@ -169,9 +169,9 @@
 //// operator * # 2
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator*(const T &val) const {
+//sep::vector_dense<T> sep::vector_dense<T>::operator*(const T &val) const {
 //
-//    spl::vector_dense<T> vec_tmp(size());
+//    sep::vector_dense<T> vec_tmp(size());
 //    vec_tmp = times(val, true);
 //
 //    return std::move(vec_tmp);
@@ -179,7 +179,7 @@
 //
 //// operator * # 3
 //
-//namespace spl {
+//namespace sep {
 //
 //    template<typename T>
 //    vector_dense <T> operator*(const T &val, const vector_dense <T> &vec) {
@@ -194,9 +194,9 @@
 //// operator / # 1
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator/(const spl::vector_dense<T> &vec) const {
+//sep::vector_dense<T> sep::vector_dense<T>::operator/(const sep::vector_dense<T> &vec) const {
 //
-//    spl::vector_dense<T> vec_tmp(vec.size());
+//    sep::vector_dense<T> vec_tmp(vec.size());
 //    vec_tmp = std::move(divide(vec, true));
 //
 //    return std::move(vec_tmp);
@@ -205,9 +205,9 @@
 //// operator / # 2
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator/(const T &val) const {
+//sep::vector_dense<T> sep::vector_dense<T>::operator/(const T &val) const {
 //
-//    spl::vector_dense<T> vec_tmp(size());
+//    sep::vector_dense<T> vec_tmp(size());
 //    vec_tmp = divide(val, true);
 //
 //    return std::move(vec_tmp);
@@ -215,7 +215,7 @@
 //
 //// operator / # 3
 //
-//namespace spl {
+//namespace sep {
 //
 //    template<typename T>
 //    vector_dense <T> operator/(const T &val, const vector_dense <T> &vec) {
@@ -231,11 +231,11 @@
 //// operator ()
 //
 //template<typename T>
-//inline T spl::vector_dense<T>::operator()(const uint64_t &index) const {
+//inline T sep::vector_dense<T>::operator()(const uint64_t &index) const {
 //
 //    if (skz::DEBUG) {
-//        spl::check_allocation(*this);
-//        spl::check_if_is_in_range(this->size(), index);
+//        sep::check_allocation(*this);
+//        sep::check_if_is_in_range(this->size(), index);
 //    }
 //
 //    return _vdp[index];
@@ -244,11 +244,11 @@
 //// operator []
 //
 //template<typename T>
-//inline T &spl::vector_dense<T>::operator[](const uint64_t &index) const {
+//inline T &sep::vector_dense<T>::operator[](const uint64_t &index) const {
 //
 //    if (skz::DEBUG) {
-//        spl::check_allocation(*this);
-//        spl::check_if_is_in_range(this->size(), index);
+//        sep::check_allocation(*this);
+//        sep::check_if_is_in_range(this->size(), index);
 //    }
 //
 //    return _vdp[index];
@@ -257,7 +257,7 @@
 //// operator += # 1
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator+=(const spl::vector_dense<T> &vec) {
+//sep::vector_dense<T> sep::vector_dense<T>::operator+=(const sep::vector_dense<T> &vec) {
 //
 //    *this = std::move(plus(vec));
 //
@@ -267,7 +267,7 @@
 //// operator += # 2
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator+=(const T &val) {
+//sep::vector_dense<T> sep::vector_dense<T>::operator+=(const T &val) {
 //
 //    *this = std::move(plus(val));
 //
@@ -277,7 +277,7 @@
 //// operator -= # 1
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator-=(const spl::vector_dense<T> &vec) {
+//sep::vector_dense<T> sep::vector_dense<T>::operator-=(const sep::vector_dense<T> &vec) {
 //
 //    *this = std::move(subtract(vec));
 //
@@ -287,7 +287,7 @@
 //// operator -= # 2
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator-=(const T &val) {
+//sep::vector_dense<T> sep::vector_dense<T>::operator-=(const T &val) {
 //
 //    *this = std::move(subtract(val));
 //
@@ -297,7 +297,7 @@
 //// operator *= # 1
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator*=(const spl::vector_dense<T> &vec) {
+//sep::vector_dense<T> sep::vector_dense<T>::operator*=(const sep::vector_dense<T> &vec) {
 //
 //    *this = std::move(times(vec));
 //
@@ -307,7 +307,7 @@
 //// operator *= # 2
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator*=(const T &val) {
+//sep::vector_dense<T> sep::vector_dense<T>::operator*=(const T &val) {
 //
 //    *this = std::move(times(val));
 //
@@ -317,7 +317,7 @@
 //// operator /= # 1
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator/=(const spl::vector_dense<T> &vec) {
+//sep::vector_dense<T> sep::vector_dense<T>::operator/=(const sep::vector_dense<T> &vec) {
 //
 //    *this = std::move(divide(vec));
 //
@@ -327,7 +327,7 @@
 //// operator /= # 2
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator/=(const T &val) {
+//sep::vector_dense<T> sep::vector_dense<T>::operator/=(const T &val) {
 //
 //    *this = std::move(divide(val));
 //
@@ -337,7 +337,7 @@
 //// operator ++ # 1
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator++() {
+//sep::vector_dense<T> sep::vector_dense<T>::operator++() {
 //
 //    *this = std::move(plus(static_cast<T>(1.0)));
 //
@@ -347,7 +347,7 @@
 //// operator ++ # 2
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator++(int) {
+//sep::vector_dense<T> sep::vector_dense<T>::operator++(int) {
 //
 //    *this = std::move(plus(static_cast<T>(1.0)));
 //
@@ -357,7 +357,7 @@
 //// operator -- # 1
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator--() {
+//sep::vector_dense<T> sep::vector_dense<T>::operator--() {
 //
 //    *this = std::move(subtract(static_cast<T>(1.0)));
 //
@@ -367,7 +367,7 @@
 //// operator -- # 2
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::operator--(int) {
+//sep::vector_dense<T> sep::vector_dense<T>::operator--(int) {
 //
 //    *this = std::move(subtract(static_cast<T>(1.0)));
 //
@@ -377,7 +377,7 @@
 //// operator == # 1
 //
 //template<typename T1>
-//bool spl::vector_dense<T1>::operator==(const spl::vector_dense<T1> &vec) const {
+//bool sep::vector_dense<T1>::operator==(const sep::vector_dense<T1> &vec) const {
 //
 //    return equal_exact(vec);
 //}
@@ -385,20 +385,20 @@
 //// operator == # 2
 //
 //template<typename T>
-//bool spl::vector_dense<T>::operator==(const T &val) const {
+//bool sep::vector_dense<T>::operator==(const T &val) const {
 //    return equal_exact(val);
 //}
 //
 //// operator != # 1
 //
 //template<typename T>
-//bool spl::vector_dense<T>::operator!=(const spl::vector_dense<T> &vec) const {
+//bool sep::vector_dense<T>::operator!=(const sep::vector_dense<T> &vec) const {
 //    return !equal_exact(vec);
 //}
 //
 //// operator != # 2
 //
 //template<typename T>
-//bool spl::vector_dense<T>::operator!=(const T &val) const {
+//bool sep::vector_dense<T>::operator!=(const T &val) const {
 //    return !equal_exact(val);
 //}

@@ -18,7 +18,7 @@ const double ERROR_M12(std::pow(10.0, -12.0));
 
 TEST(vd_test_operator_square_brackets, operators) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
 
     EXPECT_EQ(v1.get_element(INDEX1), v1[INDEX1]);
     EXPECT_EQ(v1.get_element(INDEX2), v1[INDEX2]);
@@ -32,7 +32,7 @@ TEST(vd_test_operator_square_brackets, operators) {
 
 TEST(vd_test_operator_curved_brackets, operators) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
 
     EXPECT_EQ(v1.get_element(INDEX1), v1(INDEX1));
     EXPECT_EQ(v1.get_element(INDEX2), v1(INDEX2));
@@ -46,7 +46,7 @@ TEST(vd_test_operator_curved_brackets, operators) {
 
 TEST(vd_test_operator_curved_square_brackets, operators) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
 
     EXPECT_EQ(v1.get_element(INDEX1), v1(INDEX1));
     EXPECT_EQ(v1.get_element(INDEX2), v1(INDEX2));
@@ -60,7 +60,7 @@ TEST(vd_test_operator_curved_square_brackets, operators) {
 
 TEST(vd_test_set_operator_square_brackets, operators_set) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST2);
 
     for (uint64_t i = 0; i != DIM_COMM; i++) {
         EXPECT_EQ(VAL_TEST2, v1(i));
@@ -76,7 +76,7 @@ TEST(vd_test_set_operator_square_brackets, operators_set) {
 
 TEST(vd_test_operator_plus_plus, operators) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
 
     ++v1;
 
@@ -118,7 +118,7 @@ TEST(vd_test_operator_plus_plus, operators) {
 
 TEST(vd_test_operator_minus_minus, operators) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
 
     --v1;
 
@@ -161,8 +161,8 @@ TEST(vd_test_operator_minus_minus, operators) {
 
 TEST(vd_test_operator_plus_equal, operators) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     v2 += v1;
 
@@ -208,8 +208,8 @@ TEST(vd_test_operator_plus_equal, operators) {
 
 TEST(vd_test_operator_minus_equal, operators) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     v2 -= v1;
 
@@ -261,8 +261,8 @@ TEST(vd_test_operator_minus_equal, operators) {
 
 TEST(vd_test_operator_times_equal, operators) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     v2 *= v1;
 
@@ -317,8 +317,8 @@ TEST(vd_test_operator_times_equal, operators) {
 
 TEST(vd_test_operator_divide_equal, operators) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     v2 /= v1;
 
@@ -368,8 +368,8 @@ TEST(vd_test_operator_divide_equal, operators) {
 
 TEST(vd_test_operator_equal, operators) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST1);
 
     EXPECT_EQ(v2, v1);
     EXPECT_EQ(v1, v2);
@@ -390,8 +390,8 @@ TEST(vd_test_operator_equal, operators) {
 
 TEST(vd_test_operator_not_equal, operators) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     EXPECT_NE(v2, v1);
     EXPECT_NE(v1, v2);

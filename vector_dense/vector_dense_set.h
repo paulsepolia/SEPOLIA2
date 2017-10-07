@@ -9,11 +9,11 @@
 //// set_element
 //
 //template<typename T>
-//inline void spl::vector_dense<T>::set_element(const uint64_t &index, const T &value) {
+//inline void sep::vector_dense<T>::set_element(const uint64_t &index, const T &value) {
 //
 //    if (skz::DEBUG) {
-//        spl::check_allocation(*this);
-//        spl::check_if_is_in_range(this->size(), index);
+//        sep::check_allocation(*this);
+//        sep::check_if_is_in_range(this->size(), index);
 //    }
 //
 //    _vdp[index] = static_cast<T>(value);
@@ -22,10 +22,10 @@
 //// set vector to an element
 //
 //template<typename T>
-//void spl::vector_dense<T>::set(const T &value) {
+//void sep::vector_dense<T>::set(const T &value) {
 //
 //    if (skz::DEBUG) {
-//        spl::check_allocation(*this);
+//        sep::check_allocation(*this);
 //    }
 //
 //    const uint64_t DIM(size());
@@ -46,10 +46,10 @@
 //// set vector to another vector
 //
 //template<typename T>
-//void spl::vector_dense<T>::set(const spl::vector_dense<T> &vec) {
+//void sep::vector_dense<T>::set(const sep::vector_dense<T> &vec) {
 //
 //    if (skz::DEBUG) {
-//        spl::check_allocation(vec);
+//        sep::check_allocation(vec);
 //    }
 //
 //    const uint64_t DIM(vec.size());

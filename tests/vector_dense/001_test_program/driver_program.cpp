@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
     const uint64_t DIM(static_cast<uint64_t>(std::pow(10.0, 1.0)));
     const uint64_t DIM_LARGE(static_cast<uint64_t>(std::pow(10.0, 1.0)));
     const uint64_t DIM_SMALL(static_cast<uint64_t>(std::pow(10.0, 1.0)));
-    spl::vector_dense<double> vd(DIM, 2.0);
+    sep::vector_dense<double> vd(DIM, 2.0);
     const uint64_t TEST_INDEX(5);
     const uint64_t TEST_DIM(DIM);
     const double TEST_VALUE1(1234.56789);
@@ -96,7 +96,7 @@ int main(int argc, char **argv) {
         }
 
         for (uint64_t i = 0; i < DIM_SMALL; i++) {
-            spl::vector_dense<double> vd_tmp(DIM_LARGE, TEST_VALUE3);
+            sep::vector_dense<double> vd_tmp(DIM_LARGE, TEST_VALUE3);
             vd = vd_tmp;
 
             if (i == DIM_SMALL - 1) {
@@ -108,7 +108,7 @@ int main(int argc, char **argv) {
         }
 
         for (uint64_t i = 0; i < DIM_SMALL; i++) {
-            spl::vector_dense<double> vd_tmp(DIM_LARGE, TEST_VALUE3);
+            sep::vector_dense<double> vd_tmp(DIM_LARGE, TEST_VALUE3);
             vd = std::move(vd_tmp);
 
             if (i == DIM_SMALL - 1) {
@@ -120,8 +120,8 @@ int main(int argc, char **argv) {
         }
 
         for (uint64_t i = 0; i < DIM_SMALL; i++) {
-            spl::vector_dense<double> vd_tmp(DIM_LARGE, TEST_VALUE3);
-            spl::vector_dense<double> vd(std::move(vd_tmp));
+            sep::vector_dense<double> vd_tmp(DIM_LARGE, TEST_VALUE3);
+            sep::vector_dense<double> vd(std::move(vd_tmp));
 
             if (i == DIM_SMALL - 1) {
                 fc();
@@ -132,8 +132,8 @@ int main(int argc, char **argv) {
         }
 
         for (uint64_t i = 0; i < DIM_SMALL; i++) {
-            spl::vector_dense<double> vd_tmp(DIM_LARGE, TEST_VALUE3);
-            spl::vector_dense<double> vd(std::move(vd_tmp));
+            sep::vector_dense<double> vd_tmp(DIM_LARGE, TEST_VALUE3);
+            sep::vector_dense<double> vd(std::move(vd_tmp));
 
             if (i == DIM_SMALL - 1) {
                 fc();
@@ -154,8 +154,8 @@ int main(int argc, char **argv) {
         auto t1(std::chrono::system_clock::now());
 
         for (uint64_t i = 0; i != DIM_SMALL; i++) {
-            spl::vector_dense<double> v1(DIM_LARGE, TEST_VALUE1);
-            spl::vector_dense<double> v2(std::move(v1));
+            sep::vector_dense<double> v1(DIM_LARGE, TEST_VALUE1);
+            sep::vector_dense<double> v2(std::move(v1));
         }
 
         auto t2(std::chrono::system_clock::now());
@@ -166,8 +166,8 @@ int main(int argc, char **argv) {
         t1 = std::chrono::system_clock::now();
 
         for (uint64_t i = 0; i != DIM_SMALL; i++) {
-            spl::vector_dense<double> v1(DIM_LARGE, TEST_VALUE1);
-            spl::vector_dense<double> v2(v1);
+            sep::vector_dense<double> v1(DIM_LARGE, TEST_VALUE1);
+            sep::vector_dense<double> v2(v1);
         }
 
         t2 = std::chrono::system_clock::now();
@@ -203,8 +203,8 @@ int main(int argc, char **argv) {
         auto t1(std::chrono::system_clock::now());
 
         for (uint64_t i = 0; i != DIM; i++) {
-            spl::vector_dense<double> v1(DIM_LARGE, TEST_VALUE1);
-            spl::vector_dense<double> v2(std::move(v1));
+            sep::vector_dense<double> v1(DIM_LARGE, TEST_VALUE1);
+            sep::vector_dense<double> v2(std::move(v1));
         }
 
         auto t2(std::chrono::system_clock::now());
@@ -215,8 +215,8 @@ int main(int argc, char **argv) {
         t1 = std::chrono::system_clock::now();
 
         for (uint64_t i = 0; i != DIM; i++) {
-            spl::vector_dense<double> v1(DIM_LARGE, TEST_VALUE1);
-            spl::vector_dense<double> v2(v1);
+            sep::vector_dense<double> v1(DIM_LARGE, TEST_VALUE1);
+            sep::vector_dense<double> v2(v1);
         }
 
         t2 = std::chrono::system_clock::now();
@@ -247,9 +247,9 @@ int main(int argc, char **argv) {
     //==============//
 
     {
-        spl::vector_dense<double> v1(DIM, TEST_VALUE1);
+        sep::vector_dense<double> v1(DIM, TEST_VALUE1);
         const double val(TEST_VALUE2);
-        spl::vector_dense<double> v2;
+        sep::vector_dense<double> v2;
 
         // plus
 
@@ -294,9 +294,9 @@ int main(int argc, char **argv) {
     //=======================//
 
     {
-        spl::vector_dense<double> v1(DIM, TEST_VALUE1);
+        sep::vector_dense<double> v1(DIM, TEST_VALUE1);
         const double val(TEST_VALUE2);
-        spl::vector_dense<double> v2;
+        sep::vector_dense<double> v2;
 
         // plus
 
@@ -340,9 +340,9 @@ int main(int argc, char **argv) {
     //==============================//
 
     {
-        spl::vector_dense<double> v1(DIM, TEST_VALUE1);
-        spl::vector_dense<double> v2(DIM, TEST_VALUE2);
-        spl::vector_dense<double> v3;
+        sep::vector_dense<double> v1(DIM, TEST_VALUE1);
+        sep::vector_dense<double> v2(DIM, TEST_VALUE2);
+        sep::vector_dense<double> v3;
 
         // plus
 
@@ -460,19 +460,19 @@ int main(int argc, char **argv) {
         // get_element
 
         try {
-            spl::vector_dense<double> vd1;
+            sep::vector_dense<double> vd1;
             vd1.get_element(TEST_DIM);
         }
-        catch (const spl::is_not_allocated &a) {
+        catch (const sep::is_not_allocated &a) {
             fc();
             std::cout << (a.what() == skz::E0001) << std::endl;
         }
 
         try {
-            spl::vector_dense<double> vd2(TEST_DIM, TEST_VALUE1);
+            sep::vector_dense<double> vd2(TEST_DIM, TEST_VALUE1);
             vd2.get_element(TEST_DIM);
         }
-        catch (const spl::index_out_of_range &a) {
+        catch (const sep::index_out_of_range &a) {
             fc();
             std::cout << (a.what() == skz::E0002) << std::endl;
         }
@@ -480,19 +480,19 @@ int main(int argc, char **argv) {
         // []
 
         try {
-            spl::vector_dense<double> vd1;
+            sep::vector_dense<double> vd1;
             vd1[1];
         }
-        catch (const spl::is_not_allocated &a) {
+        catch (const sep::is_not_allocated &a) {
             fc();
             std::cout << (a.what() == skz::E0001) << std::endl;
         }
 
         try {
-            spl::vector_dense<double> vd2(TEST_DIM, TEST_VALUE1);
+            sep::vector_dense<double> vd2(TEST_DIM, TEST_VALUE1);
             vd2[TEST_DIM];
         }
-        catch (const spl::index_out_of_range &a) {
+        catch (const sep::index_out_of_range &a) {
             fc();
             std::cout << (a.what() == skz::E0002) << std::endl;
         }
@@ -500,19 +500,19 @@ int main(int argc, char **argv) {
         // ()
 
         try {
-            spl::vector_dense<double> vd1;
+            sep::vector_dense<double> vd1;
             vd1(1);
         }
-        catch (const spl::is_not_allocated &a) {
+        catch (const sep::is_not_allocated &a) {
             fc();
             std::cout << (a.what() == skz::E0001) << std::endl;
         }
 
         try {
-            spl::vector_dense<double> vd2(TEST_DIM, TEST_VALUE1);
+            sep::vector_dense<double> vd2(TEST_DIM, TEST_VALUE1);
             vd2(TEST_DIM);
         }
-        catch (const spl::index_out_of_range &a) {
+        catch (const sep::index_out_of_range &a) {
             fc();
             std::cout << (a.what() == skz::E0002) << std::endl;
         }
@@ -520,10 +520,10 @@ int main(int argc, char **argv) {
         // at() non-const ref
 
         try {
-            spl::vector_dense<double> vd1;
+            sep::vector_dense<double> vd1;
             vd1(1);
         }
-        catch (const spl::is_not_allocated &a) {
+        catch (const sep::is_not_allocated &a) {
             fc();
             std::cout << (a.what() == skz::E0001) << std::endl;
         }
@@ -531,19 +531,19 @@ int main(int argc, char **argv) {
         // at() non-const ref
 
         try {
-            spl::vector_dense<double> vd2(TEST_DIM, TEST_VALUE1);
+            sep::vector_dense<double> vd2(TEST_DIM, TEST_VALUE1);
             vd2(TEST_DIM);
         }
-        catch (const spl::index_out_of_range &a) {
+        catch (const sep::index_out_of_range &a) {
             fc();
             std::cout << (a.what() == skz::E0002) << std::endl;
         }
 
         try {
-            spl::vector_dense<double> vd1;
+            sep::vector_dense<double> vd1;
             vd1(1);
         }
-        catch (const spl::is_not_allocated &a) {
+        catch (const sep::is_not_allocated &a) {
             fc();
             std::cout << (a.what() == skz::E0001) << std::endl;
         }
@@ -551,19 +551,19 @@ int main(int argc, char **argv) {
         // at() - const ref
 
         try {
-            const spl::vector_dense<double> vd2;
+            const sep::vector_dense<double> vd2;
             vd2(TEST_DIM);
         }
-        catch (const spl::is_not_allocated &a) {
+        catch (const sep::is_not_allocated &a) {
             fc();
             std::cout << (a.what() == skz::E0001) << std::endl;
         }
 
         try {
-            const spl::vector_dense<double> vd2(TEST_DIM, TEST_VALUE1);
+            const sep::vector_dense<double> vd2(TEST_DIM, TEST_VALUE1);
             vd2(TEST_DIM);
         }
-        catch (const spl::index_out_of_range &a) {
+        catch (const sep::index_out_of_range &a) {
             fc();
             std::cout << (a.what() == skz::E0002) << std::endl;
         }

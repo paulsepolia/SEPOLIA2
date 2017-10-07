@@ -6,10 +6,10 @@
 //// plus
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::plus(const T &val,
+//sep::vector_dense<T> sep::vector_dense<T>::plus(const T &val,
 //                                                const bool &par_flag) const {
 //
-//    spl::vector_dense<T> vec_out(size(), val);
+//    sep::vector_dense<T> vec_out(size(), val);
 //
 //    vector_dense_transform(vec_out, std::plus<T>(), par_flag);
 //
@@ -19,10 +19,10 @@
 //// plus
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::plus(const spl::vector_dense<T> &vec_in,
+//sep::vector_dense<T> sep::vector_dense<T>::plus(const sep::vector_dense<T> &vec_in,
 //                                                const bool &par_flag) const {
 //
-//    spl::vector_dense<T> vec_out(size(), static_cast<T>(0.0));
+//    sep::vector_dense<T> vec_out(size(), static_cast<T>(0.0));
 //
 //    vector_dense_transform(vec_in, vec_out, std::plus<T>(), par_flag);
 //
@@ -32,10 +32,10 @@
 //// times
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::times(const T &val,
+//sep::vector_dense<T> sep::vector_dense<T>::times(const T &val,
 //                                                 const bool &par_flag) const {
 //
-//    spl::vector_dense<T> vec_out(size(), val);
+//    sep::vector_dense<T> vec_out(size(), val);
 //
 //    vector_dense_transform(vec_out, std::multiplies<T>(), par_flag);
 //
@@ -45,10 +45,10 @@
 //// times
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::times(const spl::vector_dense<T> &vec_in,
+//sep::vector_dense<T> sep::vector_dense<T>::times(const sep::vector_dense<T> &vec_in,
 //                                                 const bool &par_flag) const {
 //
-//    spl::vector_dense<T> vec_out(size(), static_cast<T>(0.0));
+//    sep::vector_dense<T> vec_out(size(), static_cast<T>(0.0));
 //
 //    vector_dense_transform(vec_in, vec_out, std::multiplies<T>(), par_flag);
 //
@@ -59,10 +59,10 @@
 //// subtract
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::subtract(const T &val,
+//sep::vector_dense<T> sep::vector_dense<T>::subtract(const T &val,
 //                                                    const bool &par_flag) const {
 //
-//    spl::vector_dense<T> vec_out(size(), val);
+//    sep::vector_dense<T> vec_out(size(), val);
 //
 //    vector_dense_transform(vec_out, std::minus<T>(), par_flag);
 //
@@ -72,10 +72,10 @@
 //// subtract
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::subtract(const spl::vector_dense<T> &vec_in,
+//sep::vector_dense<T> sep::vector_dense<T>::subtract(const sep::vector_dense<T> &vec_in,
 //                                                    const bool &par_flag) const {
 //
-//    spl::vector_dense<T> vec_out(size(), static_cast<T>(0.0));
+//    sep::vector_dense<T> vec_out(size(), static_cast<T>(0.0));
 //
 //    vector_dense_transform(vec_in, vec_out, std::minus<T>(), par_flag);
 //
@@ -85,9 +85,9 @@
 //// divide
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::divide(const T &val, const bool &par_flag) const {
+//sep::vector_dense<T> sep::vector_dense<T>::divide(const T &val, const bool &par_flag) const {
 //
-//    spl::vector_dense<T> vec_out(size(), val);
+//    sep::vector_dense<T> vec_out(size(), val);
 //
 //    vector_dense_transform(vec_out, std::divides<T>(), par_flag);
 //
@@ -97,10 +97,10 @@
 //// divide
 //
 //template<typename T>
-//spl::vector_dense<T> spl::vector_dense<T>::divide(const spl::vector_dense<T> &vec_in,
+//sep::vector_dense<T> sep::vector_dense<T>::divide(const sep::vector_dense<T> &vec_in,
 //                                                  const bool &par_flag) const {
 //
-//    spl::vector_dense<T> vec_out(size(), static_cast<T>(0.0));
+//    sep::vector_dense<T> vec_out(size(), static_cast<T>(0.0));
 //
 //    vector_dense_transform(vec_in, vec_out, std::divides<T>(), par_flag);
 //

@@ -19,7 +19,7 @@ const uint64_t INDEX2(12);
 
 TEST(vd_test_check_allocation, utils) {
 
-    spl::vector_dense<double> v1;
+    sep::vector_dense<double> v1;
 
-    EXPECT_THROW(spl::check_allocation(v1), spl::is_not_allocated);
+    EXPECT_THROW(sep::check_allocation(v1), sep::is_not_allocated);
 }

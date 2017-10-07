@@ -3,7 +3,7 @@
 #include "../vector_dense/vector_dense.h"
 #include "exceptions.h"
 
-namespace spl {
+namespace sep {
 
     template<typename T>
     inline void check_allocation(const vector_dense<T> &vec) {

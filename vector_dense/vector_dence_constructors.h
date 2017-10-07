@@ -6,7 +6,7 @@
 // constructor with no arguments
 
 template<typename T>
-spl::vector_dense<T>::vector_dense(): _dimension(0),
+sep::vector_dense<T>::vector_dense(): _dimension(0),
                                       _is_alloc(false) {
 
     _vdsp.reset();
@@ -15,7 +15,7 @@ spl::vector_dense<T>::vector_dense(): _dimension(0),
 // constructor with two arguments, the last one is optional
 
 template<typename T>
-spl::vector_dense<T>::vector_dense(const uint64_t &dim, const T &val) :
+sep::vector_dense<T>::vector_dense(const uint64_t &dim, const T &val) :
         _dimension(dim),
         _is_alloc(true) {
 
@@ -31,7 +31,7 @@ spl::vector_dense<T>::vector_dense(const uint64_t &dim, const T &val) :
 // copy constructor
 
 template<typename T>
-spl::vector_dense<T>::vector_dense(const spl::vector_dense<T> &vec) :
+sep::vector_dense<T>::vector_dense(const sep::vector_dense<T> &vec) :
         _dimension(vec._dimension),
         _is_alloc(vec._is_alloc) {
 
@@ -48,7 +48,7 @@ spl::vector_dense<T>::vector_dense(const spl::vector_dense<T> &vec) :
 // move constructor
 
 template<typename T>
-spl::vector_dense<T>::vector_dense(spl::vector_dense<T> &&vec) noexcept :
+sep::vector_dense<T>::vector_dense(sep::vector_dense<T> &&vec) noexcept :
         _dimension(vec._dimension),
         _is_alloc(vec._is_alloc) {
 
@@ -61,6 +61,6 @@ spl::vector_dense<T>::vector_dense(spl::vector_dense<T> &&vec) noexcept :
 // destructor
 
 template<typename T>
-spl::vector_dense<T>::~vector_dense() {
+sep::vector_dense<T>::~vector_dense() {
     _vdsp.reset();
 }

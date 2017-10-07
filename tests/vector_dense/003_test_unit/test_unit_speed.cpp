@@ -21,11 +21,11 @@ TEST(vd_test_speed_move_copy_constructor, declare_vectors) {
 
     for (uint64_t i = 0; i != DIM_COMM; i++) {
 
-        spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+        sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
 
         EXPECT_TRUE(v1.is_allocated());
 
-        spl::vector_dense<double> v2(v1);
+        sep::vector_dense<double> v2(v1);
 
         EXPECT_TRUE(v1.is_allocated());
         EXPECT_TRUE(v2.is_allocated());
@@ -38,11 +38,11 @@ TEST(vd_test_speed_move_copy_constructor, declare_vectors) {
 
     for (uint64_t i = 0; i != DIM_COMM; i++) {
 
-        spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+        sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
 
         EXPECT_TRUE(v1.is_allocated());
 
-        spl::vector_dense<double> v2(std::move(v1));
+        sep::vector_dense<double> v2(std::move(v1));
 
         EXPECT_TRUE(v1.is_deallocated());
         EXPECT_TRUE(v2.is_allocated());
@@ -62,8 +62,8 @@ TEST(vd_test_speed_move_copy_assignment_operator, assign_to_vector) {
 
     for (uint64_t i = 0; i != DIM_COMM; i++) {
 
-        spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
-        spl::vector_dense<double> v2;
+        sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+        sep::vector_dense<double> v2;
 
         EXPECT_TRUE(v1.is_allocated());
         EXPECT_TRUE(v2.is_deallocated());
@@ -81,8 +81,8 @@ TEST(vd_test_speed_move_copy_assignment_operator, assign_to_vector) {
 
     for (uint64_t i = 0; i != DIM_COMM; i++) {
 
-        spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
-        spl::vector_dense<double> v2;
+        sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+        sep::vector_dense<double> v2;
 
         EXPECT_TRUE(v1.is_allocated());
         EXPECT_TRUE(v2.is_deallocated());

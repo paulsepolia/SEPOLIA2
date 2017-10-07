@@ -11,7 +11,7 @@ const double VAL(123.456);
 
 TEST(vd_is_allocated_deallocated_allocate_deallocate, memory) {
 
-    spl::vector_dense<double> vd;
+    sep::vector_dense<double> vd;
 
     EXPECT_EQ(vd.is_allocated(), false);
     EXPECT_EQ(vd.is_deallocated(), true);
@@ -32,7 +32,7 @@ TEST(vd_is_allocated_deallocated_allocate_deallocate, memory) {
 
 TEST(vd_allocate_deallocate_constructor_one_argument, memory) {
 
-    spl::vector_dense<double> vd(DIM);
+    sep::vector_dense<double> vd(DIM);
 
     EXPECT_TRUE(vd.is_allocated());
     EXPECT_FALSE(vd.is_deallocated());
@@ -48,7 +48,7 @@ TEST(vd_allocate_deallocate_constructor_one_argument, memory) {
 
 TEST(vd_allocate_deallocate_constructor_two_arguments, memory) {
 
-    spl::vector_dense<double> vd(DIM, VAL);
+    sep::vector_dense<double> vd(DIM, VAL);
 
     EXPECT_TRUE(vd.is_allocated());
     EXPECT_FALSE(vd.is_deallocated());

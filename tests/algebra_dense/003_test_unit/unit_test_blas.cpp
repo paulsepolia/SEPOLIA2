@@ -20,8 +20,8 @@ const double VAL_TEST4(2.0);
 
 TEST(vector_dense_dot_double_one_value, algebra_dense_blas) {
 
-    spl::vector_dense<double> vec1;
-    spl::vector_dense<double> vec2;
+    sep::vector_dense<double> vec1;
+    sep::vector_dense<double> vec2;
 
     vec1.allocate(DIM_COMM);
     vec2.allocate(DIM_COMM);
@@ -29,7 +29,7 @@ TEST(vector_dense_dot_double_one_value, algebra_dense_blas) {
     vec1 = VAL_TEST1;
     vec2 = VAL_TEST2;
 
-    const double RES(spl::dot(vec1, vec2));
+    const double RES(sep::dot(vec1, vec2));
 
     EXPECT_NEAR(VAL_TEST1 * VAL_TEST2 * DIM_COMM, RES, ERROR_10E5);
 }
@@ -38,8 +38,8 @@ TEST(vector_dense_dot_double_one_value, algebra_dense_blas) {
 
 TEST(vector_dense_dot_float_one_value, algebra_dense_blas) {
 
-    spl::vector_dense<float> vec1;
-    spl::vector_dense<float> vec2;
+    sep::vector_dense<float> vec1;
+    sep::vector_dense<float> vec2;
 
     vec1.allocate(DIM_COMM);
     vec2.allocate(DIM_COMM);
@@ -47,7 +47,7 @@ TEST(vector_dense_dot_float_one_value, algebra_dense_blas) {
     vec1 = VAL_TEST3;
     vec2 = VAL_TEST4;
 
-    const double RES(spl::dot(vec1, vec2));
+    const double RES(sep::dot(vec1, vec2));
 
     EXPECT_NEAR(VAL_TEST3 * VAL_TEST4 * DIM_COMM, RES, ERROR_10E5);
 }
@@ -56,8 +56,8 @@ TEST(vector_dense_dot_float_one_value, algebra_dense_blas) {
 
 TEST(vector_dense_dot_double_many_values, algebra_dense_blas) {
 
-    spl::vector_dense<double> vec1;
-    spl::vector_dense<double> vec2;
+    sep::vector_dense<double> vec1;
+    sep::vector_dense<double> vec2;
 
     vec1.allocate(DIM_COMM);
     vec2.allocate(DIM_COMM);
@@ -68,7 +68,7 @@ TEST(vector_dense_dot_double_many_values, algebra_dense_blas) {
         vec2[i] = std::cos(static_cast<double>(i));
     }
 
-    const double RES(spl::dot(vec1, vec2));
+    const double RES(sep::dot(vec1, vec2));
     double sum(0);
 
     for (uint64_t i = 0; i != DIM_COMM; i++) {
@@ -83,8 +83,8 @@ TEST(vector_dense_dot_double_many_values, algebra_dense_blas) {
 
 TEST(vector_dense_dot_float_many_values, algebra_dense_blas) {
 
-    spl::vector_dense<float> vec1;
-    spl::vector_dense<float> vec2;
+    sep::vector_dense<float> vec1;
+    sep::vector_dense<float> vec2;
 
     vec1.allocate(DIM_COMM);
     vec2.allocate(DIM_COMM);
@@ -95,7 +95,7 @@ TEST(vector_dense_dot_float_many_values, algebra_dense_blas) {
         vec2[i] = std::cos(static_cast<float>(i));
     }
 
-    const float RES(spl::dot(vec1, vec2));
+    const float RES(sep::dot(vec1, vec2));
     float sum(0);
 
     for (uint64_t i = 0; i != DIM_COMM; i++) {
@@ -116,7 +116,7 @@ TEST(vector_stl_dot_double_one_value, algebra_dense_blas) {
     vec1.resize(DIM_COMM, VAL_TEST1);
     vec2.resize(DIM_COMM, VAL_TEST2);
 
-    const double RES(spl::dot(vec1, vec2));
+    const double RES(sep::dot(vec1, vec2));
 
     EXPECT_NEAR(VAL_TEST1 * VAL_TEST2 * DIM_COMM, RES, ERROR_10E5);
 }
@@ -131,7 +131,7 @@ TEST(vector_stl_dot_float_one_value, algebra_dense_blas) {
     vec1.resize(DIM_COMM, VAL_TEST3);
     vec2.resize(DIM_COMM, VAL_TEST4);
 
-    const float RES(spl::dot(vec1, vec2));
+    const float RES(sep::dot(vec1, vec2));
 
     EXPECT_NEAR(VAL_TEST3 * VAL_TEST4 * DIM_COMM, RES, ERROR_10E5);
 }
@@ -152,7 +152,7 @@ TEST(vector_stl_dot_double_many_values, algebra_dense_blas) {
         vec2[i] = std::cos(static_cast<double>(i));
     }
 
-    const double RES(spl::dot(vec1, vec2));
+    const double RES(sep::dot(vec1, vec2));
     double sum(0);
 
     for (uint64_t i = 0; i != DIM_COMM; i++) {
@@ -179,7 +179,7 @@ TEST(vector_stl_dot_float_many_values, algebra_dense_blas) {
         vec2[i] = std::cos(static_cast<float>(i));
     }
 
-    const float RES(spl::dot(vec1, vec2));
+    const float RES(sep::dot(vec1, vec2));
     float sum(0);
 
     for (uint64_t i = 0; i != DIM_COMM; i++) {

@@ -48,8 +48,8 @@ sort_class_reverse sort_obj_reverse;
 
 TEST(vd_for_each, STL_algorithms) {
 
-    spl::vector_dense<double> vd1;
-    spl::vector_dense<double> vd2;
+    sep::vector_dense<double> vd1;
+    sep::vector_dense<double> vd2;
 
     vd1.allocate(DIM_COMM);
     vd2.allocate(DIM_COMM);
@@ -74,7 +74,7 @@ TEST(vd_for_each, STL_algorithms) {
 
 TEST(vd_generate, STL_algorithms) {
 
-    spl::vector_dense<double> vd;
+    sep::vector_dense<double> vd;
 
     vd.allocate(DIM_COMM);
 
@@ -100,7 +100,7 @@ TEST(vd_generate, STL_algorithms) {
 
 TEST(vd_generate_n, STL_algorithms) {
 
-    spl::vector_dense<double> vd;
+    sep::vector_dense<double> vd;
 
     vd.allocate(DIM_COMM);
 
@@ -126,8 +126,8 @@ TEST(vd_generate_n, STL_algorithms) {
 
 TEST(vd_includes_equal_vectors, STL_algorithms) {
 
-    spl::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> vd2(DIM_COMM, VAL_TEST1);;
+    sep::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd2(DIM_COMM, VAL_TEST1);;
 
     EXPECT_TRUE(std::includes(vd1.begin(), vd1.end(), vd2.begin(), vd2.end()));
 }
@@ -136,7 +136,7 @@ TEST(vd_includes_equal_vectors, STL_algorithms) {
 
 TEST(vd_includes_same_vector, STL_algorithms) {
 
-    spl::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
 
     EXPECT_TRUE(std::includes(vd1.begin(), vd1.end(), vd1.begin(), vd1.end()));
 }
@@ -145,8 +145,8 @@ TEST(vd_includes_same_vector, STL_algorithms) {
 
 TEST(vd_includes_sorted, STL_algorithms) {
 
-    spl::vector_dense<double> vd1;
-    spl::vector_dense<double> vd2;
+    sep::vector_dense<double> vd1;
+    sep::vector_dense<double> vd2;
 
     vd1.allocate(DIM2);
     vd2.allocate(DIM2 - 1);
@@ -164,8 +164,8 @@ TEST(vd_includes_sorted, STL_algorithms) {
 
 TEST(vd_includes_sorted_reverse, STL_algorithms) {
 
-    spl::vector_dense<double> vd1;
-    spl::vector_dense<double> vd2;
+    sep::vector_dense<double> vd1;
+    sep::vector_dense<double> vd2;
 
     vd1.allocate(DIM2);
     vd2.allocate(DIM2);
@@ -187,7 +187,7 @@ TEST(vd_includes_sorted_reverse, STL_algorithms) {
 
 TEST(vd_is_sorted_default, STL_algorithms) {
 
-    spl::vector_dense<double> vd;
+    sep::vector_dense<double> vd;
 
     vd.allocate(DIM_COMM);
     vd = VAL_TEST1;
@@ -204,7 +204,7 @@ TEST(vd_is_sorted_default, STL_algorithms) {
 
 TEST(vd_is_sorted_non_default, STL_algorithms) {
 
-    spl::vector_dense<double> vd;
+    sep::vector_dense<double> vd;
 
     vd.allocate(DIM_COMM);
 
@@ -225,7 +225,7 @@ TEST(vd_is_sorted_non_default, STL_algorithms) {
 
 TEST(vd_is_sorted_non_default_reverse, STL_algorithms) {
 
-    spl::vector_dense<double> vd;
+    sep::vector_dense<double> vd;
 
     vd.allocate(DIM_COMM);
 
@@ -248,8 +248,8 @@ TEST(vd_is_sorted_non_default_reverse, STL_algorithms) {
 
 TEST(vd_reverse_constructor_default, STL_algorithms) {
 
-    spl::vector_dense<double> vd1;
-    spl::vector_dense<double> vd2;
+    sep::vector_dense<double> vd1;
+    sep::vector_dense<double> vd2;
 
     vd1.allocate(DIM_COMM);
     vd2.allocate(DIM_COMM);
@@ -275,8 +275,8 @@ TEST(vd_reverse_constructor_default, STL_algorithms) {
 
 TEST(vd_reverse_constructor_one, STL_algorithms) {
 
-    spl::vector_dense<double> vd1(DIM_COMM);
-    spl::vector_dense<double> vd2(DIM_COMM);
+    sep::vector_dense<double> vd1(DIM_COMM);
+    sep::vector_dense<double> vd2(DIM_COMM);
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
         vd1[i] = static_cast<double>(i);
@@ -299,8 +299,8 @@ TEST(vd_reverse_constructor_one, STL_algorithms) {
 
 TEST(vd_reverse_constructor_two, STL_algorithms) {
 
-    spl::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> vd2(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd2(DIM_COMM, VAL_TEST1);
 
     EXPECT_EQ(vd1, vd2);
 
@@ -321,8 +321,8 @@ TEST(vd_reverse_constructor_two, STL_algorithms) {
 
 TEST(vd_reverse_copy_constructor_default, STL_algorithms) {
 
-    spl::vector_dense<double> vd1;
-    spl::vector_dense<double> vd2;
+    sep::vector_dense<double> vd1;
+    sep::vector_dense<double> vd2;
 
     vd1.allocate(DIM_COMM);
     vd2.allocate(DIM_COMM);
@@ -346,8 +346,8 @@ TEST(vd_reverse_copy_constructor_default, STL_algorithms) {
 
 TEST(vd_reverse_copy_constructor_one, STL_algorithms) {
 
-    spl::vector_dense<double> vd1(DIM_COMM);
-    spl::vector_dense<double> vd2(DIM_COMM);
+    sep::vector_dense<double> vd1(DIM_COMM);
+    sep::vector_dense<double> vd2(DIM_COMM);
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
         vd1[i] = static_cast<double>(i);
@@ -372,8 +372,8 @@ TEST(vd_reverse_copy_constructor_one, STL_algorithms) {
 
 TEST(vd_reverse_copy_constructor_two, STL_algorithms) {
 
-    spl::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> vd2(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> vd2(DIM_COMM, VAL_TEST1);
 
     EXPECT_EQ(vd1, vd2);
 
@@ -394,7 +394,7 @@ TEST(vd_reverse_copy_constructor_two, STL_algorithms) {
 
 TEST(vd_sort_default, STL_algorithms) {
 
-    spl::vector_dense<double> vd;
+    sep::vector_dense<double> vd;
 
     vd.allocate(DIM_COMM);
 
@@ -415,7 +415,7 @@ TEST(vd_sort_default, STL_algorithms) {
 
 TEST(vd_sort_non_default, STL_algorithms) {
 
-    spl::vector_dense<double> vd;
+    sep::vector_dense<double> vd;
 
     vd.allocate(DIM_COMM);
 

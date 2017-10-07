@@ -17,8 +17,8 @@ const uint64_t INDEX2(12);
 
 TEST(vd_test_add_with_number_double, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
-    spl::vector_dense<double> v2;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v2;
 
     v2 = v1.plus(VAL_TEST1);
 
@@ -39,8 +39,8 @@ TEST(vd_test_add_with_number_double, algop) {
 
 TEST(vd_test_add_with_number_uint64t, algop) {
 
-    spl::vector_dense<uint64_t> v1(DIM_COMM, VAL_TEST3);
-    spl::vector_dense<uint64_t> v2;
+    sep::vector_dense<uint64_t> v1(DIM_COMM, VAL_TEST3);
+    sep::vector_dense<uint64_t> v2;
 
     v2 = v1.plus(VAL_TEST4);
 
@@ -61,8 +61,8 @@ TEST(vd_test_add_with_number_uint64t, algop) {
 
 TEST(vd_test_add_with_number_parallel_double, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
-    spl::vector_dense<double> v2;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v2;
 
     v2 = v1.plus(VAL_TEST1, true);
 
@@ -83,8 +83,8 @@ TEST(vd_test_add_with_number_parallel_double, algop) {
 
 TEST(vd_test_add_with_number_parallel_uint64t, algop) {
 
-    spl::vector_dense<uint64_t> v1(DIM_COMM, VAL_TEST3);
-    spl::vector_dense<uint64_t> v2;
+    sep::vector_dense<uint64_t> v1(DIM_COMM, VAL_TEST3);
+    sep::vector_dense<uint64_t> v2;
 
     v2 = v1.plus(VAL_TEST4, true);
 
@@ -104,9 +104,9 @@ TEST(vd_test_add_with_number_parallel_uint64t, algop) {
 
 TEST(vd_test_add_with_vector_double, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
-    spl::vector_dense<double> v3;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v3;
 
     v3 = v1.plus(v2);
 
@@ -126,9 +126,9 @@ TEST(vd_test_add_with_vector_double, algop) {
 
 TEST(vd_test_add_with_vector_uint64t, algop) {
 
-    spl::vector_dense<uint64_t> v1(DIM_COMM, VAL_TEST3);
-    spl::vector_dense<uint64_t> v2(DIM_COMM, VAL_TEST4);
-    spl::vector_dense<uint64_t> v3;
+    sep::vector_dense<uint64_t> v1(DIM_COMM, VAL_TEST3);
+    sep::vector_dense<uint64_t> v2(DIM_COMM, VAL_TEST4);
+    sep::vector_dense<uint64_t> v3;
 
     v3 = v1.plus(v2);
 
@@ -148,9 +148,9 @@ TEST(vd_test_add_with_vector_uint64t, algop) {
 
 TEST(vd_test_add_with_vector_parallel_double, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
-    spl::vector_dense<double> v3;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v3;
 
     v3 = v1.plus(v2, true);
 
@@ -170,9 +170,9 @@ TEST(vd_test_add_with_vector_parallel_double, algop) {
 
 TEST(vd_test_add_with_vector_parallel_uint64_t, algop) {
 
-    spl::vector_dense<uint64_t> v1(DIM_COMM, VAL_TEST3);
-    spl::vector_dense<uint64_t> v2(DIM_COMM, VAL_TEST4);
-    spl::vector_dense<uint64_t> v3;
+    sep::vector_dense<uint64_t> v1(DIM_COMM, VAL_TEST3);
+    sep::vector_dense<uint64_t> v2(DIM_COMM, VAL_TEST4);
+    sep::vector_dense<uint64_t> v3;
 
     v3 = v1.plus(v2, true);
 
@@ -192,7 +192,7 @@ TEST(vd_test_add_with_vector_parallel_uint64_t, algop) {
 
 TEST(vd_test_add_with_number_return_to_same_double, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
 
     v1 = v1.plus(VAL_TEST1);
 
@@ -210,7 +210,7 @@ TEST(vd_test_add_with_number_return_to_same_double, algop) {
 
 TEST(vd_test_add_with_number_return_to_same_uint64_t, algop) {
 
-    spl::vector_dense<uint64_t> v1(DIM_COMM, VAL_TEST3);
+    sep::vector_dense<uint64_t> v1(DIM_COMM, VAL_TEST3);
 
     v1 = v1.plus(VAL_TEST4);
 
@@ -228,7 +228,7 @@ TEST(vd_test_add_with_number_return_to_same_uint64_t, algop) {
 
 TEST(vd_test_add_with_number_return_to_same_in_parallel_double, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
 
     v1 = v1.plus(VAL_TEST1, true);
 
@@ -246,7 +246,7 @@ TEST(vd_test_add_with_number_return_to_same_in_parallel_double, algop) {
 
 TEST(vd_test_add_with_number_return_to_same_in_parallel_uint64_t, algop) {
 
-    spl::vector_dense<uint64_t> v1(DIM_COMM, VAL_TEST3);
+    sep::vector_dense<uint64_t> v1(DIM_COMM, VAL_TEST3);
 
     v1 = v1.plus(VAL_TEST4, true);
 
@@ -264,8 +264,8 @@ TEST(vd_test_add_with_number_return_to_same_in_parallel_uint64_t, algop) {
 
 TEST(vd_test_add_with_vector_return_to_same_double, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     v1 = v1.plus(v2);
 
@@ -310,8 +310,8 @@ TEST(vd_test_add_with_vector_return_to_same_double, algop) {
 
 TEST(vd_test_add_with_vector_return_to_same_uint64_t, algop) {
 
-    spl::vector_dense<uint64_t> v1(DIM_COMM, VAL_TEST3);
-    spl::vector_dense<uint64_t> v2(DIM_COMM, VAL_TEST4);
+    sep::vector_dense<uint64_t> v1(DIM_COMM, VAL_TEST3);
+    sep::vector_dense<uint64_t> v2(DIM_COMM, VAL_TEST4);
 
     v1 = v1.plus(v2);
 
@@ -356,8 +356,8 @@ TEST(vd_test_add_with_vector_return_to_same_uint64_t, algop) {
 
 TEST(vd_test_add_with_vector_return_to_same_parallel_double, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     v1 = v1.plus(v2, true);
 
@@ -403,8 +403,8 @@ TEST(vd_test_add_with_vector_return_to_same_parallel_double, algop) {
 
 TEST(vd_test_add_with_vector_return_to_same_parallel_uint64_t, algop) {
 
-    spl::vector_dense<uint64_t> v1(DIM_COMM, VAL_TEST3);
-    spl::vector_dense<uint64_t> v2(DIM_COMM, VAL_TEST4);
+    sep::vector_dense<uint64_t> v1(DIM_COMM, VAL_TEST3);
+    sep::vector_dense<uint64_t> v2(DIM_COMM, VAL_TEST4);
 
     v1 = v1.plus(v2, true);
 
@@ -451,8 +451,8 @@ TEST(vd_test_add_with_vector_return_to_same_parallel_uint64_t, algop) {
 
 TEST(vd_test_subtract_a_number, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
-    spl::vector_dense<double> v2;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v2;
 
     v2 = v1.subtract(VAL_TEST1);
 
@@ -463,8 +463,8 @@ TEST(vd_test_subtract_a_number, algop) {
 
 TEST(vd_test_subtract_a_number_parallel, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
-    spl::vector_dense<double> v2;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v2;
 
     v2 = v1.subtract(VAL_TEST1, true);
 
@@ -475,9 +475,9 @@ TEST(vd_test_subtract_a_number_parallel, algop) {
 
 TEST(vd_test_subtract_with_vector, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
-    spl::vector_dense<double> v3;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v3;
 
     v3 = v1.subtract(v2);
 
@@ -489,9 +489,9 @@ TEST(vd_test_subtract_with_vector, algop) {
 
 TEST(vd_test_subtract_with_vector_parallel, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
-    spl::vector_dense<double> v3;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v3;
 
     v3 = v1.subtract(v2, true);
 
@@ -503,7 +503,7 @@ TEST(vd_test_subtract_with_vector_parallel, algop) {
 
 TEST(vd_test_subtract_a_number_to_same, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
 
     v1 = v1.subtract(VAL_TEST1);
 
@@ -515,7 +515,7 @@ TEST(vd_test_subtract_a_number_to_same, algop) {
 
 TEST(vd_test_subtract_a_number_to_same_in_parallel, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
 
     v1 = v1.subtract(VAL_TEST1, true);
 
@@ -527,8 +527,8 @@ TEST(vd_test_subtract_a_number_to_same_in_parallel, algop) {
 
 TEST(vd_test_subtract_with_vector_return_to_same, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     v1 = v1.subtract(v2);
 
@@ -556,8 +556,8 @@ TEST(vd_test_subtract_with_vector_return_to_same, algop) {
 
 TEST(vd_test_subtract_with_vector_return_to_same_parallel, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     v1 = v1.subtract(v2, true);
 
@@ -585,8 +585,8 @@ TEST(vd_test_subtract_with_vector_return_to_same_parallel, algop) {
 
 TEST(vd_test_times_a_number, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
-    spl::vector_dense<double> v2;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v2;
 
     v2 = v1.times(VAL_TEST1);
 
@@ -597,8 +597,8 @@ TEST(vd_test_times_a_number, algop) {
 
 TEST(vd_test_times_a_number_parallel, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
-    spl::vector_dense<double> v2;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v2;
 
     v2 = v1.times(VAL_TEST1, true);
 
@@ -609,9 +609,9 @@ TEST(vd_test_times_a_number_parallel, algop) {
 
 TEST(vd_test_times_with_vector, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
-    spl::vector_dense<double> v3;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v3;
 
     v3 = v1.times(v2);
 
@@ -623,9 +623,9 @@ TEST(vd_test_times_with_vector, algop) {
 
 TEST(vd_test_times_with_vector_parallel, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
-    spl::vector_dense<double> v3;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v3;
 
     v3 = v1.times(v2, true);
 
@@ -637,7 +637,7 @@ TEST(vd_test_times_with_vector_parallel, algop) {
 
 TEST(vd_test_times_a_number_to_same, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
 
     v1 = v1.times(VAL_TEST1);
 
@@ -649,7 +649,7 @@ TEST(vd_test_times_a_number_to_same, algop) {
 
 TEST(vd_test_times_a_number_to_same_in_parallel, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
 
     v1 = v1.times(VAL_TEST1, true);
 
@@ -661,8 +661,8 @@ TEST(vd_test_times_a_number_to_same_in_parallel, algop) {
 
 TEST(vd_test_times_a_vector_return_to_same, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     v1 = v1.times(v2);
 
@@ -689,8 +689,8 @@ TEST(vd_test_times_a_vector_return_to_same, algop) {
 // test times a vector with another vector and return to it in parallel
 
 TEST(vd_test_times_with_vector_return_to_same_parallel, algop) {
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     v1 = v1.times(v2, true);
 
@@ -718,8 +718,8 @@ TEST(vd_test_times_with_vector_return_to_same_parallel, algop) {
 
 TEST(vd_test_divide_a_number, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
-    spl::vector_dense<double> v2;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v2;
 
     v2 = v1.divide(VAL_TEST1);
 
@@ -730,8 +730,8 @@ TEST(vd_test_divide_a_number, algop) {
 
 TEST(vd_test_divide_a_number_parallel, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
-    spl::vector_dense<double> v2;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v2;
 
     v2 = v1.divide(VAL_TEST1, true);
 
@@ -742,9 +742,9 @@ TEST(vd_test_divide_a_number_parallel, algop) {
 
 TEST(vd_test_divide_with_vector, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
-    spl::vector_dense<double> v3;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v3;
 
     v3 = v1.divide(v2);
 
@@ -756,9 +756,9 @@ TEST(vd_test_divide_with_vector, algop) {
 
 TEST(vd_test_divide_with_vector_parallel, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
-    spl::vector_dense<double> v3;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v3;
 
     v3 = v1.divide(v2, true);
 
@@ -770,7 +770,7 @@ TEST(vd_test_divide_with_vector_parallel, algop) {
 
 TEST(vd_test_divide_a_number_to_same, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
 
     v1 = v1.divide(VAL_TEST1);
 
@@ -782,7 +782,7 @@ TEST(vd_test_divide_a_number_to_same, algop) {
 
 TEST(vd_test_divide_a_number_to_same_in_parallel, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
 
     v1 = v1.divide(VAL_TEST1, true);
 
@@ -794,8 +794,8 @@ TEST(vd_test_divide_a_number_to_same_in_parallel, algop) {
 
 TEST(vd_test_divide_a_vector_return_to_same, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     v1 = v1.divide(v2);
 
@@ -823,8 +823,8 @@ TEST(vd_test_divide_a_vector_return_to_same, algop) {
 
 TEST(vd_test_divide_with_vector_return_to_same_parallel, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     v1 = v1.divide(v2, true);
 
@@ -852,8 +852,8 @@ TEST(vd_test_divide_with_vector_return_to_same_parallel, algop) {
 
 TEST(vd_test_add_with_number_operator, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
-    spl::vector_dense<double> v2;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v2;
 
     v2 = v1 + VAL_TEST1;
 
@@ -864,9 +864,9 @@ TEST(vd_test_add_with_number_operator, algop) {
 
 TEST(vd_test_add_with_vector_operator, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
-    spl::vector_dense<double> v3;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v3;
 
     v3 = v1 + v2;
 
@@ -878,7 +878,7 @@ TEST(vd_test_add_with_vector_operator, algop) {
 
 TEST(vd_test_add_with_number_return_to_same_operator, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
 
     v1 = v1 + VAL_TEST1;
 
@@ -890,8 +890,8 @@ TEST(vd_test_add_with_number_return_to_same_operator, algop) {
 
 TEST(vd_test_add_with_vector_return_to_same_operator, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     v1 = v1 + v2;
 
@@ -919,8 +919,8 @@ TEST(vd_test_add_with_vector_return_to_same_operator, algop) {
 
 TEST(vd_test_subtract_a_number_operator, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
-    spl::vector_dense<double> v2;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v2;
 
     v2 = v1 - VAL_TEST1;
 
@@ -931,9 +931,9 @@ TEST(vd_test_subtract_a_number_operator, algop) {
 
 TEST(vd_test_subtract_with_vector_operator, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
-    spl::vector_dense<double> v3;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v3;
 
     v3 = v1 - v2;
 
@@ -945,7 +945,7 @@ TEST(vd_test_subtract_with_vector_operator, algop) {
 
 TEST(vd_test_subtract_a_number_to_same_operator, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
 
     v1 = v1 - VAL_TEST1;
 
@@ -957,8 +957,8 @@ TEST(vd_test_subtract_a_number_to_same_operator, algop) {
 
 TEST(vd_test_subtract_with_vector_return_to_same_operator, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     v1 = v1 - v2;
 
@@ -986,8 +986,8 @@ TEST(vd_test_subtract_with_vector_return_to_same_operator, algop) {
 
 TEST(vd_test_times_a_number_operator, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
-    spl::vector_dense<double> v2;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v2;
 
     v2 = v1 * VAL_TEST1;
 
@@ -998,9 +998,9 @@ TEST(vd_test_times_a_number_operator, algop) {
 
 TEST(vd_test_times_with_vector_operator, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
-    spl::vector_dense<double> v3;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v3;
 
     v3 = v1 * v2;
 
@@ -1012,7 +1012,7 @@ TEST(vd_test_times_with_vector_operator, algop) {
 
 TEST(vd_test_times_a_number_to_same_operator, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
 
     v1 = v1 * VAL_TEST1;
 
@@ -1024,8 +1024,8 @@ TEST(vd_test_times_a_number_to_same_operator, algop) {
 
 TEST(vd_test_times_a_vector_return_to_same_operator, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     v1 = v1 * v2;
 
@@ -1053,8 +1053,8 @@ TEST(vd_test_times_a_vector_return_to_same_operator, algop) {
 
 TEST(vd_test_divide_a_number_operator, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
-    spl::vector_dense<double> v2;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v2;
 
     v2 = v1 / VAL_TEST1;
 
@@ -1065,9 +1065,9 @@ TEST(vd_test_divide_a_number_operator, algop) {
 
 TEST(vd_test_divide_with_vector_operator, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
-    spl::vector_dense<double> v3;
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v3;
 
     v3 = v1 / v2;
 
@@ -1079,7 +1079,7 @@ TEST(vd_test_divide_with_vector_operator, algop) {
 
 TEST(vd_test_divide_with_number_to_same_operator, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_COMM);
 
     v1 = v1 / VAL_TEST1;
 
@@ -1091,8 +1091,8 @@ TEST(vd_test_divide_with_number_to_same_operator, algop) {
 
 TEST(vd_test_divide_a_vector_return_to_same_operator, algop) {
 
-    spl::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
-    spl::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
+    sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
+    sep::vector_dense<double> v2(DIM_COMM, VAL_TEST2);
 
     v1 = v1 / v2;
 

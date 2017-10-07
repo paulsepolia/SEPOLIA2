@@ -5,7 +5,7 @@
 
 // exceptions
 
-namespace spl {
+namespace sep {
 
     class is_not_allocated {
     public:

@@ -12,14 +12,14 @@ const double VAL_COMM(123.456);
 
 TEST(exception_not_alloc_default_constructor_any_throw, exception) {
 
-    spl::vector_dense<double> vd1;
+    sep::vector_dense<double> vd1;
 
     EXPECT_ANY_THROW(vd1(0));
     EXPECT_ANY_THROW(vd1[0]);
     EXPECT_ANY_THROW(vd1.at(0));
     EXPECT_ANY_THROW(vd1.get_element(0));
 
-    const spl::vector_dense<double> vd2;
+    const sep::vector_dense<double> vd2;
 
     EXPECT_ANY_THROW(vd2(0));
     EXPECT_ANY_THROW(vd2[0]);
@@ -31,7 +31,7 @@ TEST(exception_not_alloc_default_constructor_any_throw, exception) {
 
 TEST(exception_not_alloc_constructor_one_any_throw, exception) {
 
-    spl::vector_dense<double> vd1(DIM_COMM);
+    sep::vector_dense<double> vd1(DIM_COMM);
     vd1.deallocate();
 
     EXPECT_ANY_THROW(vd1(0));
@@ -44,7 +44,7 @@ TEST(exception_not_alloc_constructor_one_any_throw, exception) {
 
 TEST(exception_not_alloc_constructor_two_any_throw, exception) {
 
-    spl::vector_dense<double> vd1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> vd1(DIM_COMM, VAL_COMM);
     vd1.deallocate();
 
     EXPECT_ANY_THROW(vd1(0));
@@ -57,54 +57,54 @@ TEST(exception_not_alloc_constructor_two_any_throw, exception) {
 
 TEST(exception_not_alloc_default_constructor_specific_throw, exception) {
 
-    spl::vector_dense<double> vd1;
+    sep::vector_dense<double> vd1;
 
-    EXPECT_THROW(vd1(0), spl::is_not_allocated);
-    EXPECT_THROW(vd1[0], spl::is_not_allocated);
-    EXPECT_THROW(vd1.at(0), spl::is_not_allocated);
-    EXPECT_THROW(vd1.get_element(0), spl::is_not_allocated);
+    EXPECT_THROW(vd1(0), sep::is_not_allocated);
+    EXPECT_THROW(vd1[0], sep::is_not_allocated);
+    EXPECT_THROW(vd1.at(0), sep::is_not_allocated);
+    EXPECT_THROW(vd1.get_element(0), sep::is_not_allocated);
 
-    const spl::vector_dense<double> vd2;
+    const sep::vector_dense<double> vd2;
 
-    EXPECT_THROW(vd2(0), spl::is_not_allocated);
-    EXPECT_THROW(vd2[0], spl::is_not_allocated);
-    EXPECT_THROW(vd2.at(0), spl::is_not_allocated);
-    EXPECT_THROW(vd2.get_element(0), spl::is_not_allocated);
+    EXPECT_THROW(vd2(0), sep::is_not_allocated);
+    EXPECT_THROW(vd2[0], sep::is_not_allocated);
+    EXPECT_THROW(vd2.at(0), sep::is_not_allocated);
+    EXPECT_THROW(vd2.get_element(0), sep::is_not_allocated);
 }
 
 // test exception not allocation, constructor one, specific throw
 
 TEST(exception_not_alloc_constructor_one_specific_throw, exception) {
 
-    spl::vector_dense<double> vd1(DIM_COMM);
+    sep::vector_dense<double> vd1(DIM_COMM);
 
     vd1.deallocate();
 
-    EXPECT_THROW(vd1(0), spl::is_not_allocated);
-    EXPECT_THROW(vd1[0], spl::is_not_allocated);
-    EXPECT_THROW(vd1.at(0), spl::is_not_allocated);
-    EXPECT_THROW(vd1.get_element(0), spl::is_not_allocated);
+    EXPECT_THROW(vd1(0), sep::is_not_allocated);
+    EXPECT_THROW(vd1[0], sep::is_not_allocated);
+    EXPECT_THROW(vd1.at(0), sep::is_not_allocated);
+    EXPECT_THROW(vd1.get_element(0), sep::is_not_allocated);
 }
 
 // test exception not allocation, constructor two, specific throw
 
 TEST(exception_not_alloc_constructor_two_specific_throw, exception) {
 
-    spl::vector_dense<double> vd1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> vd1(DIM_COMM, VAL_COMM);
 
     vd1.deallocate();
 
-    EXPECT_THROW(vd1(0), spl::is_not_allocated);
-    EXPECT_THROW(vd1[0], spl::is_not_allocated);
-    EXPECT_THROW(vd1.at(0), spl::is_not_allocated);
-    EXPECT_THROW(vd1.get_element(0), spl::is_not_allocated);
+    EXPECT_THROW(vd1(0), sep::is_not_allocated);
+    EXPECT_THROW(vd1[0], sep::is_not_allocated);
+    EXPECT_THROW(vd1.at(0), sep::is_not_allocated);
+    EXPECT_THROW(vd1.get_element(0), sep::is_not_allocated);
 }
 
 // test exception out of range, default constructor, any throw
 
 TEST(exception_out_of_range_default_constructor_any_throw, exception) {
 
-    spl::vector_dense<double> vd1;
+    sep::vector_dense<double> vd1;
     vd1.allocate(DIM_COMM);
 
     EXPECT_ANY_THROW(vd1(DIM_COMM));
@@ -112,7 +112,7 @@ TEST(exception_out_of_range_default_constructor_any_throw, exception) {
     EXPECT_ANY_THROW(vd1.at(DIM_COMM));
     EXPECT_ANY_THROW(vd1.get_element(DIM_COMM));
 
-    const spl::vector_dense<double> vd2;
+    const sep::vector_dense<double> vd2;
     vd1.allocate(DIM_COMM);
 
     EXPECT_ANY_THROW(vd2(DIM_COMM));
@@ -125,14 +125,14 @@ TEST(exception_out_of_range_default_constructor_any_throw, exception) {
 
 TEST(exception_out_of_range_constructor_one_any_throw, exception) {
 
-    spl::vector_dense<double> vd1(DIM_COMM);
+    sep::vector_dense<double> vd1(DIM_COMM);
 
     EXPECT_ANY_THROW(vd1(DIM_COMM));
     EXPECT_ANY_THROW(vd1[DIM_COMM]);
     EXPECT_ANY_THROW(vd1.at(DIM_COMM));
     EXPECT_ANY_THROW(vd1.get_element(DIM_COMM));
 
-    const spl::vector_dense<double> vd2(DIM_COMM);
+    const sep::vector_dense<double> vd2(DIM_COMM);
 
     EXPECT_ANY_THROW(vd2(DIM_COMM));
     EXPECT_ANY_THROW(vd2[DIM_COMM]);
@@ -145,14 +145,14 @@ TEST(exception_out_of_range_constructor_one_any_throw, exception) {
 
 TEST(exception_out_of_range_constructor_two_any_throw, exception) {
 
-    spl::vector_dense<double> vd1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> vd1(DIM_COMM, VAL_COMM);
 
     EXPECT_ANY_THROW(vd1(DIM_COMM));
     EXPECT_ANY_THROW(vd1[DIM_COMM]);
     EXPECT_ANY_THROW(vd1.at(DIM_COMM));
     EXPECT_ANY_THROW(vd1.get_element(DIM_COMM));
 
-    const spl::vector_dense<double> vd2(DIM_COMM, VAL_COMM);
+    const sep::vector_dense<double> vd2(DIM_COMM, VAL_COMM);
 
     EXPECT_ANY_THROW(vd2(DIM_COMM));
     EXPECT_ANY_THROW(vd2[DIM_COMM]);
@@ -164,50 +164,50 @@ TEST(exception_out_of_range_constructor_two_any_throw, exception) {
 
 TEST(exception_out_of_range_default_constructor_specific_throw, exception) {
 
-    spl::vector_dense<double> vd1;
+    sep::vector_dense<double> vd1;
     vd1.allocate(DIM_COMM);
 
-    EXPECT_THROW(vd1(DIM_COMM), spl::index_out_of_range);
-    EXPECT_THROW(vd1[DIM_COMM], spl::index_out_of_range);
-    EXPECT_THROW(vd1.at(DIM_COMM), spl::index_out_of_range);
-    EXPECT_THROW(vd1.get_element(DIM_COMM), spl::index_out_of_range);
+    EXPECT_THROW(vd1(DIM_COMM), sep::index_out_of_range);
+    EXPECT_THROW(vd1[DIM_COMM], sep::index_out_of_range);
+    EXPECT_THROW(vd1.at(DIM_COMM), sep::index_out_of_range);
+    EXPECT_THROW(vd1.get_element(DIM_COMM), sep::index_out_of_range);
 }
 
 // test exception out of range, constructor one, specific throw
 
 TEST(exception_out_of_range_constructor_one_specific_throw, exception) {
 
-    spl::vector_dense<double> vd1(DIM_COMM);
+    sep::vector_dense<double> vd1(DIM_COMM);
 
-    EXPECT_THROW(vd1(DIM_COMM), spl::index_out_of_range);
-    EXPECT_THROW(vd1[DIM_COMM], spl::index_out_of_range);
-    EXPECT_THROW(vd1.at(DIM_COMM), spl::index_out_of_range);
-    EXPECT_THROW(vd1.get_element(DIM_COMM), spl::index_out_of_range);
+    EXPECT_THROW(vd1(DIM_COMM), sep::index_out_of_range);
+    EXPECT_THROW(vd1[DIM_COMM], sep::index_out_of_range);
+    EXPECT_THROW(vd1.at(DIM_COMM), sep::index_out_of_range);
+    EXPECT_THROW(vd1.get_element(DIM_COMM), sep::index_out_of_range);
 
-    const spl::vector_dense<double> vd2(DIM_COMM);
+    const sep::vector_dense<double> vd2(DIM_COMM);
 
-    EXPECT_THROW(vd2(DIM_COMM), spl::index_out_of_range);
-    EXPECT_THROW(vd2[DIM_COMM], spl::index_out_of_range);
-    EXPECT_THROW(vd2.at(DIM_COMM), spl::index_out_of_range);
-    EXPECT_THROW(vd2.get_element(DIM_COMM), spl::index_out_of_range);
+    EXPECT_THROW(vd2(DIM_COMM), sep::index_out_of_range);
+    EXPECT_THROW(vd2[DIM_COMM], sep::index_out_of_range);
+    EXPECT_THROW(vd2.at(DIM_COMM), sep::index_out_of_range);
+    EXPECT_THROW(vd2.get_element(DIM_COMM), sep::index_out_of_range);
 }
 
 // test exception out of range, constructor two, specific throw
 
 TEST(exception_out_of_range_constructor_two_specific_throw, exception) {
 
-    spl::vector_dense<double> vd1(DIM_COMM, VAL_COMM);
+    sep::vector_dense<double> vd1(DIM_COMM, VAL_COMM);
 
-    EXPECT_THROW(vd1(DIM_COMM), spl::index_out_of_range);
-    EXPECT_THROW(vd1[DIM_COMM], spl::index_out_of_range);
-    EXPECT_THROW(vd1.at(DIM_COMM), spl::index_out_of_range);
-    EXPECT_THROW(vd1.get_element(DIM_COMM), spl::index_out_of_range);
+    EXPECT_THROW(vd1(DIM_COMM), sep::index_out_of_range);
+    EXPECT_THROW(vd1[DIM_COMM], sep::index_out_of_range);
+    EXPECT_THROW(vd1.at(DIM_COMM), sep::index_out_of_range);
+    EXPECT_THROW(vd1.get_element(DIM_COMM), sep::index_out_of_range);
 
-    const spl::vector_dense<double> vd2(DIM_COMM, VAL_COMM);
+    const sep::vector_dense<double> vd2(DIM_COMM, VAL_COMM);
 
-    EXPECT_THROW(vd2(DIM_COMM), spl::index_out_of_range);
-    EXPECT_THROW(vd2[DIM_COMM], spl::index_out_of_range);
-    EXPECT_THROW(vd2.at(DIM_COMM), spl::index_out_of_range);
-    EXPECT_THROW(vd2.get_element(DIM_COMM), spl::index_out_of_range);
+    EXPECT_THROW(vd2(DIM_COMM), sep::index_out_of_range);
+    EXPECT_THROW(vd2[DIM_COMM], sep::index_out_of_range);
+    EXPECT_THROW(vd2.at(DIM_COMM), sep::index_out_of_range);
+    EXPECT_THROW(vd2.get_element(DIM_COMM), sep::index_out_of_range);
 }
 
