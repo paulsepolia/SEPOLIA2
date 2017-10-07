@@ -1,0 +1,4 @@
+/opt/clion/2017.1.0/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Release /opt/gcc/620/bin_ln/c++-6.2.0 /opt/gtest/1.7.0/lib/libgtest.a -G "CodeBlocks - Unix Makefiles" /home/pgg/pgg/git_projects/not_finished/SEPOLIA2
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release

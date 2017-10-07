@@ -1,0 +1,3 @@
+/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-debug/CMakeFiles/SEPOLIA2.dir

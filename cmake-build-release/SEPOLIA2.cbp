@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="SEPOLIA2"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SEPOLIA2">
+				<Option output="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/SEPOLIA2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/opt/gtest/1.7.0/include"/>
+					<Add directory="/opt/mkl/compilers_and_libraries_2017.0.098/linux/ipp/include"/>
+					<Add directory="/opt/mkl/compilers_and_libraries_2017.0.098/linux/mkl/include"/>
+					<Add directory="/opt/mkl/compilers_and_libraries_2017.0.098/linux/tbb/include"/>
+					<Add directory="/opt/mkl/compilers_and_libraries_2017.0.098/linux/daal/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 SEPOLIA2"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SEPOLIA2/fast">
+				<Option output="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/SEPOLIA2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/opt/gtest/1.7.0/include"/>
+					<Add directory="/opt/mkl/compilers_and_libraries_2017.0.098/linux/ipp/include"/>
+					<Add directory="/opt/mkl/compilers_and_libraries_2017.0.098/linux/mkl/include"/>
+					<Add directory="/opt/mkl/compilers_and_libraries_2017.0.098/linux/tbb/include"/>
+					<Add directory="/opt/mkl/compilers_and_libraries_2017.0.098/linux/daal/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 SEPOLIA2/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/algebra_dense">
+			<Option target="SEPOLIA2"/>
+		</Unit>
+		<Unit filename="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/parameters">
+			<Option target="SEPOLIA2"/>
+		</Unit>
+		<Unit filename="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/tests/vector_dense/001_test_program">
+			<Option target="SEPOLIA2"/>
+		</Unit>
+		<Unit filename="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/tests/vector_dense/002_test_speed">
+			<Option target="SEPOLIA2"/>
+		</Unit>
+		<Unit filename="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/tests/vector_dense/002_test_speed/functions_speed_test_aux.cpp">
+			<Option target="SEPOLIA2"/>
+		</Unit>
+		<Unit filename="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/tests/vector_dense/002_test_speed/functions_speed_test_aux.h">
+			<Option target="SEPOLIA2"/>
+		</Unit>
+		<Unit filename="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/tests/vector_dense/002_test_speed/test_speed_algop.cpp">
+			<Option target="SEPOLIA2"/>
+		</Unit>
+		<Unit filename="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/tests/vector_dense/002_test_speed/test_speed_decl.cpp">
+			<Option target="SEPOLIA2"/>
+		</Unit>
+		<Unit filename="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/tests/vector_dense/002_test_speed/tests.h">
+			<Option target="SEPOLIA2"/>
+		</Unit>
+		<Unit filename="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/tests/vector_dense/003_test_unit">
+			<Option target="SEPOLIA2"/>
+		</Unit>
+		<Unit filename="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/tests/vector_dense/003_test_unit/test_unit_stl_members.cpp">
+			<Option target="SEPOLIA2"/>
+		</Unit>
+		<Unit filename="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/utilities">
+			<Option target="SEPOLIA2"/>
+		</Unit>
+		<Unit filename="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/utilities/functions.h">
+			<Option target="SEPOLIA2"/>
+		</Unit>
+		<Unit filename="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/vector_dense">
+			<Option target="SEPOLIA2"/>
+		</Unit>
+		<Unit filename="/home/pgg/pgg/git_projects/not_finished/SEPOLIA2/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
