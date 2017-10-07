@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3 -DNDEBUG   CMakeFiles/SEPOLIA2.dir/tests/vector_dense/test_speed/functions_speed_test_aux.cpp.o CMakeFiles/SEPOLIA2.dir/tests/vector_dense/test_speed/test_speed_decl.cpp.o CMakeFiles/SEPOLIA2.dir/tests/vector_dense/test_speed/test_speed_algop.cpp.o  -o SEPOLIA2 
