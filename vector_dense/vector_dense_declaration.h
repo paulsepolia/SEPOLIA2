@@ -20,7 +20,7 @@ namespace spl {
         explicit vector_dense<T>();
 
         // constructor with two arguments
-        explicit vector_dense<T>(const uint64_t &, const T & = 0);
+        explicit vector_dense<T>(const uint64_t &dim, const T &val = 0);
 
         // copy constructor
         vector_dense<T>(const vector_dense<T> &);

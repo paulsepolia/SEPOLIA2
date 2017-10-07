@@ -4,8 +4,8 @@
 
 // local parameters
 
-const uint64_t DIM_COMM(static_cast<uint64_t>(std::pow(10.0, 4.0)));
-const double VAL_COMM(123.456);
+const uint64_t DIM(static_cast<uint64_t>(std::pow(10.0, 4.0)));
+const double VAL(123.456);
 
 // test constructor with no arguments
 
@@ -17,11 +17,11 @@ TEST(constructor_with_no_arguments, constructors) {
     EXPECT_EQ(vd.is_deallocated(), true);
 }
 
-// test constructor with two arguments but one active
+// test constructor with one argument
 
-TEST(constructor_with_tow_arguments_one_set, constructors) {
+TEST(constructor_with_one_argument, constructors) {
 
-    spl::vector_dense<double> vd(DIM_COMM);
+    spl::vector_dense<double> vd(DIM);
 
     EXPECT_EQ(vd.is_allocated(), true);
     EXPECT_EQ(vd.is_deallocated(), false);
@@ -31,7 +31,7 @@ TEST(constructor_with_tow_arguments_one_set, constructors) {
 
 TEST(constructor_with_two_arguments, constructors) {
 
-    spl::vector_dense<double> vd(DIM_COMM, VAL_COMM);
+    spl::vector_dense<double> vd(DIM, VAL);
 
     EXPECT_EQ(vd.is_allocated(), true);
     EXPECT_EQ(vd.is_deallocated(), false);

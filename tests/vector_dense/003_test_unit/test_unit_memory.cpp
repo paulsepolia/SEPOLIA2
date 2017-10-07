@@ -4,8 +4,8 @@
 
 // local parameters
 
-const uint64_t DIM_COMM(static_cast<uint64_t>(std::pow(10.0, 4.0)));
-const double VAL_COMM(123.456);
+const uint64_t DIM(static_cast<uint64_t>(std::pow(10.0, 4.0)));
+const double VAL(123.456);
 
 // test is_allocated, is_deallocated, allocate and deallocate
 
@@ -16,7 +16,7 @@ TEST(vd_is_allocated_deallocated_allocate_deallocate, memory) {
     EXPECT_EQ(vd.is_allocated(), false);
     EXPECT_EQ(vd.is_deallocated(), true);
 
-    vd.allocate(DIM_COMM);
+    vd.allocate(DIM);
 
     EXPECT_EQ(vd.is_allocated(), true);
     EXPECT_EQ(vd.is_deallocated(), false);
@@ -27,23 +27,34 @@ TEST(vd_is_allocated_deallocated_allocate_deallocate, memory) {
     EXPECT_EQ(vd.is_deallocated(), true);
 }
 
-// test is_allocated, is_deallocated, allocate and deallocate via constructor
+// test is_allocated, is_deallocated,
+// allocate and deallocate via constructor with one argument
 
-TEST(vd_allocate_deallocate_constructor, memory) {
+TEST(vd_allocate_deallocate_constructor_one_argument, memory) {
 
-    spl::vector_dense<double> vd1(DIM_COMM);
+    spl::vector_dense<double> vd(DIM);
 
-    EXPECT_TRUE(vd1.is_allocated());
-    EXPECT_FALSE(vd1.is_deallocated());
-    vd1.deallocate();
-    EXPECT_FALSE(vd1.is_allocated());
-    EXPECT_TRUE(vd1.is_deallocated());
+    EXPECT_TRUE(vd.is_allocated());
+    EXPECT_FALSE(vd.is_deallocated());
 
-    spl::vector_dense<double> vd2(DIM_COMM, VAL_COMM);
+    vd.deallocate();
 
-    EXPECT_TRUE(vd2.is_allocated());
-    EXPECT_FALSE(vd2.is_deallocated());
-    vd2.deallocate();
-    EXPECT_FALSE(vd2.is_allocated());
-    EXPECT_TRUE(vd2.is_deallocated());
+    EXPECT_FALSE(vd.is_allocated());
+    EXPECT_TRUE(vd.is_deallocated());
+}
+
+// test is_allocated, is_deallocated,
+// allocate and deallocate via constructor with two arguments
+
+TEST(vd_allocate_deallocate_constructor_two_arguments, memory) {
+
+    spl::vector_dense<double> vd(DIM, VAL);
+
+    EXPECT_TRUE(vd.is_allocated());
+    EXPECT_FALSE(vd.is_deallocated());
+
+    vd.deallocate();
+
+    EXPECT_FALSE(vd.is_allocated());
+    EXPECT_TRUE(vd.is_deallocated());
 }
