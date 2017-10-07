@@ -67,7 +67,7 @@ namespace sep {
         vector_dense<T> &operator=(const T &);
 
         // vector move assignment operator
-        vector_dense<T> &operator=(vector_dense<T> &&);
+        vector_dense<T> &operator=(vector_dense<T> &&) noexcept;
 
         // operator +
         vector_dense<T> operator+(const vector_dense<T> &) const;
