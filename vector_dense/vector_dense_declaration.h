@@ -190,14 +190,6 @@ namespace sep {
         // help functions //
         //================//
 
-        //==========//
-        // get, set //
-        //==========//
-
-        T get_element(const uint64_t &) const;
-
-        void set_element(const uint64_t &, const T &);
-
         //===============//
         // algebra_dense //
         //===============//

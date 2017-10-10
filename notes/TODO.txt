@@ -1,0 +1,6 @@
+
+[1] To clean all the test cases
+
+[2] To install the INTEL compiler and to verify the tests
+
+[3] To install the PGI compiler and to verify the tests

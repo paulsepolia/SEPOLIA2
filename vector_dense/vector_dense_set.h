@@ -6,19 +6,6 @@
 #include "../utilities/exceptions.h"
 #include "../utilities/functions.h"
 
-// set_element
-
-template<typename T>
-inline void sep::vector_dense<T>::set_element(const uint64_t &index, const T &value) {
-
-    if (skz::DEBUG) {
-        sep::check_allocation(*this);
-        sep::check_if_is_in_range(this->size(), index);
-    }
-
-    _vdsp.get()[index] = static_cast<T>(value);
-}
-
 // set vector to an element
 
 template<typename T>
