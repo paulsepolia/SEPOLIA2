@@ -43,13 +43,6 @@ namespace sep {
 
         bool is_deallocated() const;
 
-        //==========//
-        // get, set //
-        //==========//
-
-        T get_element(const uint64_t &) const;
-        void set_element(const uint64_t &, const T &);
-
         //===========//
         // operators //
         //===========//
@@ -183,6 +176,28 @@ namespace sep {
 
         void swap(vector_dense<T> &);
 
+    private:
+
+        //==============//
+        // data members //
+        //==============//
+
+        uint64_t _dimension;
+        bool _is_alloc;
+        std::shared_ptr<T> _vdsp;
+
+        //================//
+        // help functions //
+        //================//
+
+        //==========//
+        // get, set //
+        //==========//
+
+        T get_element(const uint64_t &) const;
+
+        void set_element(const uint64_t &, const T &);
+
         //===============//
         // algebra_dense //
         //===============//
@@ -202,16 +217,6 @@ namespace sep {
         vector_dense<T> divide(const vector_dense<T> &, const bool & = false) const;
 
         vector_dense<T> divide(const T &, const bool & = false) const;
-
-    private:
-
-        //==============//
-        // data members //
-        //==============//
-
-        uint64_t _dimension;
-        bool _is_alloc;
-        std::shared_ptr<T> _vdsp;
 
         //================//
         // help functions //

@@ -20,11 +20,11 @@ TEST(vd_test_operator_square_brackets, operators) {
 
     sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
 
-    EXPECT_EQ(v1.get_element(INDEX1), v1[INDEX1]);
-    EXPECT_EQ(v1.get_element(INDEX2), v1[INDEX2]);
+    EXPECT_EQ(VAL_TEST1, v1[INDEX1]);
+    EXPECT_EQ(VAL_TEST1, v1[INDEX2]);
 
     for (uint64_t i = 0; i != DIM_COMM; i++) {
-        EXPECT_EQ(v1.get_element(i), v1[i]);
+        EXPECT_EQ(VAL_TEST1, v1[i]);
     }
 }
 
@@ -34,11 +34,11 @@ TEST(vd_test_operator_curved_brackets, operators) {
 
     sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
 
-    EXPECT_EQ(v1.get_element(INDEX1), v1(INDEX1));
-    EXPECT_EQ(v1.get_element(INDEX2), v1(INDEX2));
+    EXPECT_EQ(VAL_TEST1, v1(INDEX1));
+    EXPECT_EQ(VAL_TEST1, v1(INDEX2));
 
     for (uint64_t i = 0; i != DIM_COMM; i++) {
-        EXPECT_EQ(v1.get_element(i), v1(i));
+        EXPECT_EQ(VAL_TEST1, v1(i));
     }
 }
 
@@ -48,8 +48,8 @@ TEST(vd_test_operator_curved_square_brackets, operators) {
 
     sep::vector_dense<double> v1(DIM_COMM, VAL_TEST1);
 
-    EXPECT_EQ(v1.get_element(INDEX1), v1(INDEX1));
-    EXPECT_EQ(v1.get_element(INDEX2), v1(INDEX2));
+    EXPECT_EQ(VAL_TEST1, v1(INDEX1));
+    EXPECT_EQ(VAL_TEST1, v1(INDEX2));
 
     for (uint64_t i = 0; i != DIM_COMM; i++) {
         EXPECT_EQ(v1[i], v1(i));

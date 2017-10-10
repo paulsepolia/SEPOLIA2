@@ -23,9 +23,9 @@ int main(int argc, char **argv) {
     std::cout << std::boolalpha;
     std::cout << std::fixed;
     std::cout << std::setprecision(5);
-    const uint64_t DIM(static_cast<uint64_t>(std::pow(10.0, 1.0)));
-    const uint64_t DIM_LARGE(static_cast<uint64_t>(std::pow(10.0, 1.0)));
-    const uint64_t DIM_SMALL(static_cast<uint64_t>(std::pow(10.0, 1.0)));
+    const auto DIM(static_cast<uint64_t>(std::pow(10.0, 1.0)));
+    const auto DIM_LARGE(static_cast<uint64_t>(std::pow(10.0, 1.0)));
+    const auto DIM_SMALL(static_cast<uint64_t>(std::pow(10.0, 1.0)));
     sep::vector_dense<double> vd(DIM, 2.0);
     const uint64_t TEST_INDEX(5);
     const uint64_t TEST_DIM(10);
@@ -53,17 +53,17 @@ int main(int argc, char **argv) {
         vd = TEST_VALUE1;
 
         fc();
-        std::cout << (vd.get_element(TEST_INDEX) == TEST_VALUE1) << std::endl;
+        std::cout << (vd[TEST_INDEX] == TEST_VALUE1) << std::endl;
 
-        vd.set_element(TEST_INDEX, TEST_VALUE1);
+        vd[TEST_INDEX] = TEST_VALUE1;
 
         fc();
-        std::cout << (vd.get_element(TEST_INDEX) == TEST_VALUE1) << std::endl;
+        std::cout << (vd[TEST_INDEX] == TEST_VALUE1) << std::endl;
 
         vd = TEST_VALUE2;
 
         fc();
-        std::cout << (vd.get_element(0) == TEST_VALUE2) << std::endl;
+        std::cout << (vd[0] == TEST_VALUE2) << std::endl;
 
         vd.deallocate();
         vd.allocate(DIM_LARGE);
@@ -71,9 +71,9 @@ int main(int argc, char **argv) {
         vd = TEST_VALUE3;
 
         fc();
-        std::cout << (vd.get_element(TEST_INDEX) == TEST_VALUE3) << std::endl;
+        std::cout << (vd[TEST_INDEX] == TEST_VALUE3) << std::endl;
         fc();
-        std::cout << (vd.get_element(DIM_LARGE - 1) == TEST_VALUE3) << std::endl;
+        std::cout << (vd[DIM_LARGE - 1] == TEST_VALUE3) << std::endl;
 
         vd.deallocate();
         vd.allocate(TEST_DIM);
@@ -89,9 +89,9 @@ int main(int argc, char **argv) {
 
             if (i == DIM_SMALL - 1) {
                 fc();
-                std::cout << (vd.get_element(0) == TEST_VALUE1) << std::endl;
+                std::cout << (vd[0] == TEST_VALUE1) << std::endl;
                 fc();
-                std::cout << (vd.get_element(DIM_LARGE - 1) == TEST_VALUE1) << std::endl;
+                std::cout << (vd[DIM_LARGE - 1] == TEST_VALUE1) << std::endl;
             }
         }
 
@@ -101,9 +101,9 @@ int main(int argc, char **argv) {
 
             if (i == DIM_SMALL - 1) {
                 fc();
-                std::cout << (vd.get_element(0) == TEST_VALUE3) << std::endl;
+                std::cout << (vd[0] == TEST_VALUE3) << std::endl;
                 fc();
-                std::cout << (vd.get_element(DIM_LARGE - 1) == TEST_VALUE3) << std::endl;
+                std::cout << (vd[DIM_LARGE - 1] == TEST_VALUE3) << std::endl;
             }
         }
 
@@ -113,9 +113,9 @@ int main(int argc, char **argv) {
 
             if (i == DIM_SMALL - 1) {
                 fc();
-                std::cout << (vd.get_element(0) == TEST_VALUE3) << std::endl;
+                std::cout << (vd[0] == TEST_VALUE3) << std::endl;
                 fc();
-                std::cout << (vd.get_element(DIM_LARGE - 1) == TEST_VALUE3) << std::endl;
+                std::cout << (vd[DIM_LARGE - 1] == TEST_VALUE3) << std::endl;
             }
         }
 
@@ -125,9 +125,9 @@ int main(int argc, char **argv) {
 
             if (i == DIM_SMALL - 1) {
                 fc();
-                std::cout << (vd.get_element(0) == TEST_VALUE3) << std::endl;
+                std::cout << (vd[0] == TEST_VALUE3) << std::endl;
                 fc();
-                std::cout << (vd.get_element(DIM_LARGE - 1) == TEST_VALUE3) << std::endl;
+                std::cout << (vd[DIM_LARGE - 1] == TEST_VALUE3) << std::endl;
             }
         }
 
@@ -137,9 +137,9 @@ int main(int argc, char **argv) {
 
             if (i == DIM_SMALL - 1) {
                 fc();
-                std::cout << (vd.get_element(0) == TEST_VALUE3) << std::endl;
+                std::cout << (vd[0] == TEST_VALUE3) << std::endl;
                 fc();
-                std::cout << (vd.get_element(DIM_LARGE - 1) == TEST_VALUE3) << std::endl;
+                std::cout << (vd[DIM_LARGE - 1] == TEST_VALUE3) << std::endl;
             }
         }
     }
@@ -254,38 +254,38 @@ int main(int argc, char **argv) {
         // plus
 
         for (uint64_t i = 0; i != DIM_LARGE; i++) {
-            v2 = v1.plus(val);
+            v2 = v1 + val;
         }
 
         fc();
-        std::cout << ((v1.get_element(0) + val) == v2.get_element(0)) << std::endl;
+        std::cout << ((v1[0] + val) == v2[0]) << std::endl;
 
         // subtract
 
         for (uint64_t i = 0; i != DIM; i++) {
-            v2 = v1.subtract(val);
+            v2 = v1 - val;
         }
 
         fc();
-        std::cout << ((v1.get_element(0) - val) == v2.get_element(0)) << std::endl;
+        std::cout << ((v1[0] - val) == v2[0]) << std::endl;
 
         // times
 
         for (uint64_t i = 0; i != DIM; i++) {
-            v2 = v1.times(val);
+            v2 = v1 * val;
         }
 
         fc();
-        std::cout << ((v1.get_element(0) * val) == v2.get_element(0)) << std::endl;
+        std::cout << ((v1[0] * val) == v2[0]) << std::endl;
 
         // divide
 
         for (uint64_t i = 0; i != DIM; i++) {
-            v2 = v1.divide(val);
+            v2 = v1 / val;
         }
 
         fc();
-        std::cout << ((v1.get_element(0) / val) == v2.get_element(0)) << std::endl;
+        std::cout << ((v1[0] / val) == v2[0]) << std::endl;
 
     }
 
@@ -301,38 +301,38 @@ int main(int argc, char **argv) {
         // plus
 
         for (uint64_t i = 0; i != DIM_LARGE; i++) {
-            v2 = v1.plus(val, true);
+            v2 = v1 + val;
         }
 
         fc();
-        std::cout << ((v1.get_element(0) + val) == v2.get_element(0)) << std::endl;
+        std::cout << ((v1[0] + val) == v2[0]) << std::endl;
 
         // subtract
 
         for (uint64_t i = 0; i != DIM; i++) {
-            v2 = v1.subtract(val, true);
+            v2 = v1 - val;
         }
 
         fc();
-        std::cout << ((v1.get_element(0) - val) == v2.get_element(0)) << std::endl;
+        std::cout << ((v1[0] - val) == v2[0]) << std::endl;
 
         // times
 
         for (uint64_t i = 0; i != DIM; i++) {
-            v2 = v1.times(val, true);
+            v2 = v1 * val;
         }
 
         fc();
-        std::cout << ((v1.get_element(0) * val) == v2.get_element(0)) << std::endl;
+        std::cout << ((v1[0] * val) == v2[0]) << std::endl;
 
         // divide
 
         for (uint64_t i = 0; i != DIM; i++) {
-            v2 = v1.divide(val, true);
+            v2 = v1 / val;
         }
 
         fc();
-        std::cout << ((v1.get_element(0) / val) == v2.get_element(0)) << std::endl;
+        std::cout << ((v1[0] / val) == v2[0]) << std::endl;
     }
 
     //==============//
@@ -347,42 +347,42 @@ int main(int argc, char **argv) {
         // plus
 
         for (uint64_t i = 0; i != DIM_LARGE; i++) {
-            v3 = v1.plus(v2);
+            v3 = v1 + v2;
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) + v2.get_element(TEST_INDEX)) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] + v2[TEST_INDEX]) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         // subtract
 
         for (uint64_t i = 0; i != DIM; i++) {
-            v3 = v1.subtract(v2);
+            v3 = v1 - v2;
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) - v2.get_element(TEST_INDEX)) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] - v2[TEST_INDEX]) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         // times
 
         for (uint64_t i = 0; i != DIM; i++) {
-            v3 = v1.times(v2);
+            v3 = v1 * v2;
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) * v2.get_element(TEST_INDEX)) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] * v2[TEST_INDEX]) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         // divide
 
         for (uint64_t i = 0; i != DIM; i++) {
-            v3 = v1.divide(v2);
+            v3 = v1 / v2;
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) / v2.get_element(TEST_INDEX)) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] / v2[TEST_INDEX]) ==
+                      v3[TEST_INDEX]) << std::endl;
     }
 
     //=======================//
@@ -397,42 +397,42 @@ int main(int argc, char **argv) {
         // plus
 
         for (uint64_t i = 0; i != DIM_LARGE; i++) {
-            v3 = v1.plus(v2, true);
+            v3 = v1 + v2;
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) + v2.get_element(TEST_INDEX)) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] + v2[TEST_INDEX]) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         // subtract
 
         for (uint64_t i = 0; i != DIM; i++) {
-            v3 = v1.subtract(v2, true);
+            v3 = v1 - v2;
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) - v2.get_element(TEST_INDEX)) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] - v2[TEST_INDEX]) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         // times
 
         for (uint64_t i = 0; i != DIM; i++) {
-            v3 = v1.times(v2, true);
+            v3 = v1 * v2;
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) * v2.get_element(TEST_INDEX)) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] * v2[TEST_INDEX]) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         // divide
 
         for (uint64_t i = 0; i != DIM; i++) {
-            v3 = v1.divide(v2, true);
+            v3 = v1 / v2;
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) / v2.get_element(TEST_INDEX)) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] / v2[TEST_INDEX]) ==
+                      v3[TEST_INDEX]) << std::endl;
     }
 
     //==============================//
@@ -451,24 +451,24 @@ int main(int argc, char **argv) {
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) + v2.get_element(TEST_INDEX)) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] + v2[TEST_INDEX]) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         for (uint64_t i = 0; i != DIM_LARGE; i++) {
             v3 = v1 + TEST_VALUE3;
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) + TEST_VALUE3) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] + TEST_VALUE3) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         for (uint64_t i = 0; i != DIM_LARGE; i++) {
             v3 = TEST_VALUE3 + v1;
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) + TEST_VALUE3) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] + TEST_VALUE3) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         // subtract
 
@@ -477,24 +477,24 @@ int main(int argc, char **argv) {
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) - v2.get_element(TEST_INDEX)) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] - v2[TEST_INDEX]) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         for (uint64_t i = 0; i != DIM_LARGE; i++) {
             v3 = v1 - TEST_VALUE3;
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) - TEST_VALUE3) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] - TEST_VALUE3) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         for (uint64_t i = 0; i != DIM_LARGE; i++) {
             v3 = TEST_VALUE3 - v1;
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) - TEST_VALUE3) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] - TEST_VALUE3) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         // times
 
@@ -503,24 +503,24 @@ int main(int argc, char **argv) {
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) * v2.get_element(TEST_INDEX)) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] * v2[TEST_INDEX]) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         for (uint64_t i = 0; i != DIM_LARGE; i++) {
             v3 = v1 * TEST_VALUE3;
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) * TEST_VALUE3) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] * TEST_VALUE3) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         for (uint64_t i = 0; i != DIM_LARGE; i++) {
             v3 = TEST_VALUE3 * v1;
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) * TEST_VALUE3) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] * TEST_VALUE3) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         // divide
 
@@ -529,24 +529,24 @@ int main(int argc, char **argv) {
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) / v2.get_element(TEST_INDEX)) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] / v2[TEST_INDEX]) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         for (uint64_t i = 0; i != DIM_LARGE; i++) {
             v3 = v1 / TEST_VALUE3;
         }
 
         fc();
-        std::cout << ((v1.get_element(TEST_INDEX) / TEST_VALUE3) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((v1[TEST_INDEX] / TEST_VALUE3) ==
+                      v3[TEST_INDEX]) << std::endl;
 
         for (uint64_t i = 0; i != DIM_LARGE; i++) {
             v3 = TEST_VALUE3 / v1;
         }
 
         fc();
-        std::cout << ((TEST_VALUE3 / v1.get_element(TEST_INDEX)) ==
-                      v3.get_element(TEST_INDEX)) << std::endl;
+        std::cout << ((TEST_VALUE3 / v1[TEST_INDEX]) ==
+                      v3[TEST_INDEX]) << std::endl;
     }
 
     return 0;

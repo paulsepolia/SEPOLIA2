@@ -17,7 +17,6 @@ TEST(vd_set_element_via_constructor_and_get_it_double, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(VAL_TEST1, vd.get_element(i));
         EXPECT_EQ(VAL_TEST1, vd[i]);
         EXPECT_EQ(VAL_TEST1, vd(i));
     }
@@ -33,7 +32,6 @@ TEST(vd_set_element_via_constructor_and_get_it_uint64_t, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(VAL_TEST2, vd.get_element(i));
         EXPECT_EQ(VAL_TEST2, vd[i]);
         EXPECT_EQ(VAL_TEST2, vd(i));
     }
@@ -49,7 +47,6 @@ TEST(vd_set_element_via_constructor_and_get_it_int64_t, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(VAL_TEST3, vd.get_element(i));
         EXPECT_EQ(VAL_TEST3, vd[i]);
         EXPECT_EQ(VAL_TEST3, vd(i));
     }
@@ -124,24 +121,11 @@ TEST(vd_set_element_and_get_it_double, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        vd.set_element(i, static_cast<double>(i));
-    }
-
-    for (uint64_t i = 0; i < DIM_COMM; i++) {
-
-        EXPECT_EQ(vd.get_element(i), static_cast<double>(i));
-        EXPECT_EQ(vd(i), static_cast<double>(i));
-        EXPECT_EQ(vd[i], static_cast<double>(i));
-    }
-
-    for (uint64_t i = 0; i < DIM_COMM; i++) {
-
         vd[i] = static_cast<double>(i);
     }
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd.get_element(i), static_cast<double>(i));
         EXPECT_EQ(vd(i), static_cast<double>(i));
         EXPECT_EQ(vd[i], static_cast<double>(i));
     }
@@ -157,24 +141,11 @@ TEST(vd_set_element_and_get_it_uint64_t, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        vd.set_element(i, i);
-    }
-
-    for (uint64_t i = 0; i < DIM_COMM; i++) {
-
-        EXPECT_EQ(vd.get_element(i), i);
-        EXPECT_EQ(vd(i), i);
-        EXPECT_EQ(vd[i], i);
-    }
-
-    for (uint64_t i = 0; i < DIM_COMM; i++) {
-
         vd[i] = i;
     }
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd.get_element(i), i);
         EXPECT_EQ(vd(i), i);
         EXPECT_EQ(vd[i], i);
     }
@@ -190,24 +161,11 @@ TEST(vd_set_element_and_get_it_int64_t, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        vd.set_element(i, i);
-    }
-
-    for (uint64_t i = 0; i < DIM_COMM; i++) {
-
-        EXPECT_EQ(vd.get_element(i), i);
-        EXPECT_EQ(vd(i), i);
-        EXPECT_EQ(vd[i], i);
-    }
-
-    for (uint64_t i = 0; i < DIM_COMM; i++) {
-
         vd[i] = i;
     }
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd.get_element(i), i);
         EXPECT_EQ(vd(i), i);
         EXPECT_EQ(vd[i], i);
     }
@@ -226,8 +184,6 @@ TEST(vd_set_vector_to_another_using_assignment_operator_double, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd1.get_element(i), VAL_TEST1);
-        EXPECT_EQ(vd2.get_element(i), VAL_TEST1);
         EXPECT_EQ(vd1(i), VAL_TEST1);
         EXPECT_EQ(vd2(i), VAL_TEST1);
         EXPECT_EQ(vd1[i], VAL_TEST1);
@@ -250,8 +206,6 @@ TEST(vd_set_vector_to_another_using_assignment_operator_uint64_t, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd1.get_element(i), VAL_TEST2);
-        EXPECT_EQ(vd2.get_element(i), VAL_TEST2);
         EXPECT_EQ(vd1(i), VAL_TEST2);
         EXPECT_EQ(vd2(i), VAL_TEST2);
         EXPECT_EQ(vd1[i], VAL_TEST2);
@@ -274,8 +228,6 @@ TEST(vd_set_vector_to_another_using_assignment_operator_int64_t, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd1.get_element(i), VAL_TEST3);
-        EXPECT_EQ(vd2.get_element(i), VAL_TEST3);
         EXPECT_EQ(vd1(i), VAL_TEST3);
         EXPECT_EQ(vd2(i), VAL_TEST3);
         EXPECT_EQ(vd1[i], VAL_TEST3);
@@ -298,7 +250,6 @@ TEST(vd_set_vector_to_element_using_assignment_operator_double, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd1.get_element(i), VAL_TEST1);
         EXPECT_EQ(vd1(i), VAL_TEST1);
         EXPECT_EQ(vd1[i], VAL_TEST1);
     }
@@ -308,7 +259,6 @@ TEST(vd_set_vector_to_element_using_assignment_operator_double, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd2.get_element(i), VAL_TEST1);
         EXPECT_EQ(vd2(i), VAL_TEST1);
         EXPECT_EQ(vd2[i], VAL_TEST1);
     }
@@ -329,7 +279,6 @@ TEST(vd_set_vector_to_element_using_assignment_operator_uint64_t, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd1.get_element(i), VAL_TEST2);
         EXPECT_EQ(vd1(i), VAL_TEST2);
         EXPECT_EQ(vd1[i], VAL_TEST2);
     }
@@ -339,7 +288,6 @@ TEST(vd_set_vector_to_element_using_assignment_operator_uint64_t, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd2.get_element(i), VAL_TEST2);
         EXPECT_EQ(vd2(i), VAL_TEST2);
         EXPECT_EQ(vd2[i], VAL_TEST2);
     }
@@ -360,7 +308,6 @@ TEST(vd_set_vector_to_element_using_assignment_operator_int64_t, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd1.get_element(i), VAL_TEST3);
         EXPECT_EQ(vd1(i), VAL_TEST3);
         EXPECT_EQ(vd1[i], VAL_TEST3);
     }
@@ -370,7 +317,6 @@ TEST(vd_set_vector_to_element_using_assignment_operator_int64_t, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd2.get_element(i), VAL_TEST3);
         EXPECT_EQ(vd2(i), VAL_TEST3);
         EXPECT_EQ(vd2[i], VAL_TEST3);
     }
@@ -392,8 +338,6 @@ TEST(vd_set_vector_via_copy_constructor_double, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd1.get_element(i), VAL_TEST1);
-        EXPECT_EQ(vd2.get_element(i), VAL_TEST1);
         EXPECT_EQ(vd1(i), VAL_TEST1);
         EXPECT_EQ(vd2(i), VAL_TEST1);
         EXPECT_EQ(vd1[i], VAL_TEST1);
@@ -415,8 +359,6 @@ TEST(vd_set_vector_via_copy_constructor_uint64_t, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd1.get_element(i), VAL_TEST2);
-        EXPECT_EQ(vd2.get_element(i), VAL_TEST2);
         EXPECT_EQ(vd1(i), VAL_TEST2);
         EXPECT_EQ(vd2(i), VAL_TEST2);
         EXPECT_EQ(vd1[i], VAL_TEST2);
@@ -438,8 +380,6 @@ TEST(vd_set_vector_via_copy_constructor_int64_t, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd1.get_element(i), VAL_TEST3);
-        EXPECT_EQ(vd2.get_element(i), VAL_TEST3);
         EXPECT_EQ(vd1(i), VAL_TEST3);
         EXPECT_EQ(vd2(i), VAL_TEST3);
         EXPECT_EQ(vd1[i], VAL_TEST3);
@@ -465,7 +405,6 @@ TEST(vd_set_vector_via_move_constructor_double, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd2.get_element(i), VAL_TEST1);
         EXPECT_EQ(vd2(i), VAL_TEST1);
         EXPECT_EQ(vd2[i], VAL_TEST1);
     }
@@ -489,7 +428,6 @@ TEST(vd_set_vector_via_move_constructor_uint64_t, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd2.get_element(i), VAL_TEST2);
         EXPECT_EQ(vd2(i), VAL_TEST2);
         EXPECT_EQ(vd2[i], VAL_TEST2);
     }
@@ -513,7 +451,6 @@ TEST(vd_set_vector_via_move_constructor_int64_t, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd2.get_element(i), VAL_TEST3);
         EXPECT_EQ(vd2(i), VAL_TEST3);
         EXPECT_EQ(vd2[i], VAL_TEST3);
     }
@@ -538,7 +475,6 @@ TEST(vd_set_vector_via_move_assignment_operator_double, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd2.get_element(i), VAL_TEST1);
         EXPECT_EQ(vd2(i), VAL_TEST1);
         EXPECT_EQ(vd2[i], VAL_TEST1);
     }
@@ -563,7 +499,6 @@ TEST(vd_set_vector_via_move_assignment_operator_uint64_t, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd2.get_element(i), VAL_TEST2);
         EXPECT_EQ(vd2(i), VAL_TEST2);
         EXPECT_EQ(vd2[i], VAL_TEST2);
     }
@@ -588,7 +523,6 @@ TEST(vd_set_vector_via_move_assignment_operator_int64_t, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd2.get_element(i), VAL_TEST3);
         EXPECT_EQ(vd2(i), VAL_TEST3);
         EXPECT_EQ(vd2[i], VAL_TEST3);
     }
@@ -612,7 +546,6 @@ TEST(vd_set_vector_via_std_vector_copy, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd.get_element(i), static_cast<double>(i));
         EXPECT_EQ(vd[i], static_cast<double>(i));
         EXPECT_EQ(vd(i), static_cast<double>(i));
         EXPECT_EQ(vec_std[i], static_cast<double>(i));
@@ -637,7 +570,6 @@ TEST(vd_set_vector_via_std_vector_copy_already_alloc, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd.get_element(i), static_cast<double>(i));
         EXPECT_EQ(vd[i], static_cast<double>(i));
         EXPECT_EQ(vd(i), static_cast<double>(i));
         EXPECT_EQ(vec_std[i], static_cast<double>(i));
@@ -662,7 +594,6 @@ TEST(vd_set_vector_via_std_vector_move, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd.get_element(i), static_cast<double>(i));
         EXPECT_EQ(vd[i], static_cast<double>(i));
         EXPECT_EQ(vd(i), static_cast<double>(i));
     }
@@ -686,7 +617,6 @@ TEST(vd_set_vector_via_std_vector_move_already_alloc, set_get) {
 
     for (uint64_t i = 0; i < DIM_COMM; i++) {
 
-        EXPECT_EQ(vd.get_element(i), static_cast<double>(i));
         EXPECT_EQ(vd[i], static_cast<double>(i));
         EXPECT_EQ(vd(i), static_cast<double>(i));
     }

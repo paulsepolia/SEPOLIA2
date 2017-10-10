@@ -5,6 +5,9 @@
 #include "functions_speed_test_aux.h"
 #include "../../../vector_dense/vector_dense.h"
 
+
+// TODO: to clean up the functions since there are duplicates
+
 //=============================//
 // function to display results //
 //=============================//
@@ -203,7 +206,7 @@ void fun_set_vector_element_by_element(const uint64_t &trials,
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
         for (uint64_t j = 0; j < DIM_VEC; j++) {
-            v1.set_element(j, TEST_VAL);
+            v1[j] = TEST_VAL;
         }
     }
 
@@ -381,7 +384,7 @@ void fun_add_vector_vector_plus_true(const uint64_t &trials,
     auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        v3 = v1.plus(v2, true);
+        v3 = v1 + v2;
     }
 
     auto t2(std::chrono::system_clock::now());
@@ -409,7 +412,7 @@ void fun_add_vector_vector_plus_false(const uint64_t &trials,
     auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        v3 = v1.plus(v2, false);
+        v3 = v1 + v2;
     }
 
     auto t2(std::chrono::system_clock::now());
@@ -499,7 +502,7 @@ void fun_times_vector_vector_times_true(const uint64_t &trials,
     auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        v3 = v1.times(v2, true);
+        v3 = v1 * v2;
     }
 
     auto t2(std::chrono::system_clock::now());
@@ -527,7 +530,7 @@ void fun_times_vector_vector_times_false(const uint64_t &trials,
     auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        v3 = v1.times(v2, false);
+        v3 = v1 * v2;
     }
 
     auto t2(std::chrono::system_clock::now());
@@ -617,7 +620,7 @@ void fun_subtract_vector_vector_subtract_true(const uint64_t &trials,
     auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        v3 = v1.subtract(v2, true);
+        v3 = v1 - v2;
     }
 
     auto t2(std::chrono::system_clock::now());
@@ -645,7 +648,7 @@ void fun_subtract_vector_vector_subtract_false(const uint64_t &trials,
     auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        v3 = v1.subtract(v2, false);
+        v3 = v1 - v2;
     }
 
     auto t2(std::chrono::system_clock::now());
@@ -735,7 +738,7 @@ void fun_divide_vector_vector_divide_true(const uint64_t &trials,
     auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        v3 = v1.divide(v2, true);
+        v3 = v1 / v2;
     }
 
     auto t2(std::chrono::system_clock::now());
@@ -763,7 +766,7 @@ void fun_divide_vector_vector_divide_false(const uint64_t &trials,
     auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        v3 = v1.divide(v2, false);
+        v3 = v1 / v2;
     }
 
     auto t2(std::chrono::system_clock::now());
