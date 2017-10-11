@@ -110,7 +110,7 @@ sep::vector_dense<T> sep::vector_dense<T>::operator+(const T &val) const {
 namespace sep {
 
     template<typename T>
-    vector_dense <T> operator+(const T &val, const vector_dense <T> &vec) {
+    vector_dense<T> operator+(const T &val, const vector_dense<T> &vec) {
 
         vector_dense<T> vec_tmp(vec.size());
         vec_tmp = vec.plus(val, true);
@@ -146,7 +146,7 @@ sep::vector_dense<T> sep::vector_dense<T>::operator-(const T &val) const {
 namespace sep {
 
     template<typename T>
-    vector_dense <T> operator-(const T &val, const vector_dense <T> &vec) {
+    vector_dense<T> operator-(const T &val, const vector_dense<T> &vec) {
 
         vector_dense<T> vec_tmp(vec.size());
         vec_tmp = vec.subtract(val, true);
@@ -182,7 +182,7 @@ sep::vector_dense<T> sep::vector_dense<T>::operator*(const T &val) const {
 namespace sep {
 
     template<typename T>
-    vector_dense <T> operator*(const T &val, const vector_dense <T> &vec) {
+    vector_dense<T> operator*(const T &val, const vector_dense<T> &vec) {
 
         vector_dense<T> vec_tmp(vec.size());
         vec_tmp = vec.times(val, true);
@@ -218,7 +218,7 @@ sep::vector_dense<T> sep::vector_dense<T>::operator/(const T &val) const {
 namespace sep {
 
     template<typename T>
-    vector_dense <T> operator/(const T &val, const vector_dense <T> &vec) {
+    vector_dense<T> operator/(const T &val, const vector_dense<T> &vec) {
 
         vector_dense<T> vec_tmp(vec.size(), val);
 
@@ -231,7 +231,7 @@ namespace sep {
 // operator ()
 
 template<typename T>
-inline T sep::vector_dense<T>::operator()(const uint64_t &index) const {
+inline const T & sep::vector_dense<T>::operator()(const uint64_t &index) const {
 
     if (skz::DEBUG) {
         sep::check_allocation(*this);
@@ -259,7 +259,7 @@ inline T &sep::vector_dense<T>::operator[](const uint64_t &index) const {
 template<typename T>
 sep::vector_dense<T> sep::vector_dense<T>::operator+=(const sep::vector_dense<T> &vec) {
 
-    *this = std::move(plus(vec));
+    *this = std::move(plus(vec, true));
 
     return *this;
 }
@@ -269,7 +269,7 @@ sep::vector_dense<T> sep::vector_dense<T>::operator+=(const sep::vector_dense<T>
 template<typename T>
 sep::vector_dense<T> sep::vector_dense<T>::operator+=(const T &val) {
 
-    *this = std::move(plus(val));
+    *this = std::move(plus(val, true));
 
     return *this;
 }
@@ -279,7 +279,7 @@ sep::vector_dense<T> sep::vector_dense<T>::operator+=(const T &val) {
 template<typename T>
 sep::vector_dense<T> sep::vector_dense<T>::operator-=(const sep::vector_dense<T> &vec) {
 
-    *this = std::move(subtract(vec));
+    *this = std::move(subtract(vec, true));
 
     return *this;
 }
@@ -289,7 +289,7 @@ sep::vector_dense<T> sep::vector_dense<T>::operator-=(const sep::vector_dense<T>
 template<typename T>
 sep::vector_dense<T> sep::vector_dense<T>::operator-=(const T &val) {
 
-    *this = std::move(subtract(val));
+    *this = std::move(subtract(val, true));
 
     return *this;
 }
@@ -299,7 +299,7 @@ sep::vector_dense<T> sep::vector_dense<T>::operator-=(const T &val) {
 template<typename T>
 sep::vector_dense<T> sep::vector_dense<T>::operator*=(const sep::vector_dense<T> &vec) {
 
-    *this = std::move(times(vec));
+    *this = std::move(times(vec, true));
 
     return *this;
 }
@@ -309,7 +309,7 @@ sep::vector_dense<T> sep::vector_dense<T>::operator*=(const sep::vector_dense<T>
 template<typename T>
 sep::vector_dense<T> sep::vector_dense<T>::operator*=(const T &val) {
 
-    *this = std::move(times(val));
+    *this = std::move(times(val, true));
 
     return *this;
 }
@@ -319,7 +319,7 @@ sep::vector_dense<T> sep::vector_dense<T>::operator*=(const T &val) {
 template<typename T>
 sep::vector_dense<T> sep::vector_dense<T>::operator/=(const sep::vector_dense<T> &vec) {
 
-    *this = std::move(divide(vec));
+    *this = std::move(divide(vec, true));
 
     return *this;
 }
@@ -329,7 +329,7 @@ sep::vector_dense<T> sep::vector_dense<T>::operator/=(const sep::vector_dense<T>
 template<typename T>
 sep::vector_dense<T> sep::vector_dense<T>::operator/=(const T &val) {
 
-    *this = std::move(divide(val));
+    *this = std::move(divide(val, true));
 
     return *this;
 }
@@ -339,7 +339,7 @@ sep::vector_dense<T> sep::vector_dense<T>::operator/=(const T &val) {
 template<typename T>
 sep::vector_dense<T> sep::vector_dense<T>::operator++() {
 
-    *this = std::move(plus(static_cast<T>(1.0)));
+    *this = std::move(plus(static_cast<T>(1.0), true));
 
     return *this;
 }
@@ -349,7 +349,7 @@ sep::vector_dense<T> sep::vector_dense<T>::operator++() {
 template<typename T>
 sep::vector_dense<T> sep::vector_dense<T>::operator++(int) {
 
-    *this = std::move(plus(static_cast<T>(1.0)));
+    *this = std::move(plus(static_cast<T>(1.0), true));
 
     return *this;
 }
@@ -359,7 +359,7 @@ sep::vector_dense<T> sep::vector_dense<T>::operator++(int) {
 template<typename T>
 sep::vector_dense<T> sep::vector_dense<T>::operator--() {
 
-    *this = std::move(subtract(static_cast<T>(1.0)));
+    *this = std::move(subtract(static_cast<T>(1.0), true));
 
     return *this;
 }
@@ -369,7 +369,7 @@ sep::vector_dense<T> sep::vector_dense<T>::operator--() {
 template<typename T>
 sep::vector_dense<T> sep::vector_dense<T>::operator--(int) {
 
-    *this = std::move(subtract(static_cast<T>(1.0)));
+    *this = std::move(subtract(static_cast<T>(1.0), true));
 
     return *this;
 }

@@ -5,9 +5,6 @@
 #include "functions_speed_test_aux.h"
 #include "../../../vector_dense/vector_dense.h"
 
-
-// TODO: to clean up the functions since there are duplicates
-
 //=============================//
 // function to display results //
 //=============================//
@@ -62,16 +59,15 @@ void fun_display_c() {
 
 void fun_declaration_via_default_constructor(const uint64_t &trials, const uint32_t &wformat) {
 
-    auto t1(std::chrono::system_clock::now());
-
+    const auto t1(std::chrono::system_clock::now());
     const auto TRIALS(trials);
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
         sep::vector_dense<double> v1;
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -89,8 +85,7 @@ void fun_alloc_set_via_constructor(const uint64_t &trials,
                                    const double &val,
                                    const uint32_t &wformat) {
 
-    auto t1(std::chrono::system_clock::now());
-
+    const auto t1(std::chrono::system_clock::now());
     const auto TRIALS(trials);
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL(val);
@@ -99,8 +94,8 @@ void fun_alloc_set_via_constructor(const uint64_t &trials,
         sep::vector_dense<double> v1(DIM_VEC, TEST_VAL);
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -114,8 +109,7 @@ void fun_alloc_set_dealloc(const uint64_t &trials,
                            const double &val,
                            const uint32_t &wformat) {
 
-    auto t1(std::chrono::system_clock::now());
-
+    const auto t1(std::chrono::system_clock::now());
     const auto TRIALS(trials);
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL(val);
@@ -124,10 +118,11 @@ void fun_alloc_set_dealloc(const uint64_t &trials,
         sep::vector_dense<double> v1;
         v1.allocate(DIM_VEC);
         v1 = TEST_VAL;
+        v1.deallocate();
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -148,14 +143,14 @@ void fun_declaration_via_constructor_full(const uint64_t &trials,
     v1.allocate(DIM_VEC);
     v1 = TEST_VAL;
 
-    auto t1(std::chrono::system_clock::now());
+    const auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
         sep::vector_dense<double> v2(v1);
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -176,15 +171,15 @@ void fun_set_via_assignment_operator(const uint64_t &trials,
     v1.allocate(DIM_VEC);
     v1 = TEST_VAL;
 
-    auto t1(std::chrono::system_clock::now());
+    const auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
         sep::vector_dense<double> v2;
         v2 = v1;
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -202,7 +197,7 @@ void fun_set_vector_element_by_element(const uint64_t &trials,
 
     sep::vector_dense<double> v1(DIM_VEC);
 
-    auto t1(std::chrono::system_clock::now());
+    const auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
         for (uint64_t j = 0; j < DIM_VEC; j++) {
@@ -210,35 +205,8 @@ void fun_set_vector_element_by_element(const uint64_t &trials,
         }
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
-            std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
-
-    const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
-    const auto SPEED((DIM_VEC * TRIALS) / (TIME_TOTAL / 1000.0));
-
-    fun_display_a(TRIALS, DIM_VEC, TIME_TOTAL, SPEED, wformat);
-}
-
-void fun_set_vector_element_by_element_square(const uint64_t &trials,
-                                              const uint64_t &vec_size,
-                                              const uint32_t &wformat) {
-    const auto TRIALS(trials);
-    const auto DIM_VEC(vec_size);
-    const auto TEST_VAL(1234.5678);
-
-    sep::vector_dense<double> v1(DIM_VEC);
-
-    auto t1(std::chrono::system_clock::now());
-
-    for (uint64_t i = 1; i <= TRIALS; i++) {
-        for (uint64_t j = 0; j < DIM_VEC; j++) {
-            v1[j] = TEST_VAL;
-        }
-    }
-
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -258,10 +226,10 @@ void fun_get_vector_element_by_element_square(const uint64_t &trials,
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL(1234.5678);
 
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL);
+    const sep::vector_dense<double> v1(DIM_VEC, TEST_VAL);
     sep::vector_dense<double> v2(DIM_VEC);
 
-    auto t1(std::chrono::system_clock::now());
+    const auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
         for (uint64_t j = 0; j < DIM_VEC; j++) {
@@ -269,8 +237,8 @@ void fun_get_vector_element_by_element_square(const uint64_t &trials,
         }
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -286,10 +254,10 @@ void fun_get_vector_element_by_element_curly(const uint64_t &trials,
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL(1234.5678);
 
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL);
+    const sep::vector_dense<double> v1(DIM_VEC, TEST_VAL);
     sep::vector_dense<double> v2(DIM_VEC);
 
-    auto t1(std::chrono::system_clock::now());
+    const auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
         for (uint64_t j = 0; j < DIM_VEC; j++) {
@@ -297,8 +265,8 @@ void fun_get_vector_element_by_element_curly(const uint64_t &trials,
         }
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -319,8 +287,8 @@ void fun_add_vector_vector_using_operator(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    const sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    const sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
     sep::vector_dense<double> v3(DIM_VEC);
 
     auto t1(std::chrono::system_clock::now());
@@ -329,8 +297,8 @@ void fun_add_vector_vector_using_operator(const uint64_t &trials,
         v3 = v1 + v2;
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -339,19 +307,19 @@ void fun_add_vector_vector_using_operator(const uint64_t &trials,
     fun_display_a(TRIALS, DIM_VEC, TIME_TOTAL, SPEED, wformat);
 }
 
-void fun_add_vector_vector_element_by_element(const uint64_t &trials,
-                                              const uint64_t &vec_size,
-                                              const uint32_t &wformat) {
+void fun_add_vector_vector_element_by_element_square(const uint64_t &trials,
+                                                     const uint64_t &vec_size,
+                                                     const uint32_t &wformat) {
     const auto TRIALS(trials);
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    const sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    const sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
     sep::vector_dense<double> v3(DIM_VEC);
 
-    auto t1(std::chrono::system_clock::now());
+    const auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
         for (uint64_t j = 0; j < DIM_VEC; j++) {
@@ -359,8 +327,8 @@ void fun_add_vector_vector_element_by_element(const uint64_t &trials,
         }
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -369,54 +337,28 @@ void fun_add_vector_vector_element_by_element(const uint64_t &trials,
     fun_display_a(TRIALS, DIM_VEC, TIME_TOTAL, SPEED, wformat);
 }
 
-void fun_add_vector_vector_plus_true(const uint64_t &trials,
-                                     const uint64_t &vec_size,
-                                     const uint32_t &wformat) {
+void fun_add_vector_vector_element_by_element_curly(const uint64_t &trials,
+                                                    const uint64_t &vec_size,
+                                                    const uint32_t &wformat) {
     const auto TRIALS(trials);
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    const sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    const sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
     sep::vector_dense<double> v3(DIM_VEC);
 
-    auto t1(std::chrono::system_clock::now());
+    const auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        v3 = v1 + v2;
+        for (uint64_t j = 0; j < DIM_VEC; j++) {
+            v3[j] = v1(j) + v2(j);
+        }
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
-            std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
-
-    const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
-    const auto SPEED((DIM_VEC * TRIALS) / (TIME_TOTAL / 1000.0));
-
-    fun_display_a(TRIALS, DIM_VEC, TIME_TOTAL, SPEED, wformat);
-}
-
-void fun_add_vector_vector_plus_false(const uint64_t &trials,
-                                      const uint64_t &vec_size,
-                                      const uint32_t &wformat) {
-    const auto TRIALS(trials);
-    const auto DIM_VEC(vec_size);
-    const auto TEST_VAL1(1234.5678);
-    const auto TEST_VAL2(8765.4321);
-
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    sep::vector_dense<double> v3(DIM_VEC);
-
-    auto t1(std::chrono::system_clock::now());
-
-    for (uint64_t i = 1; i <= TRIALS; i++) {
-        v3 = v1 + v2;
-    }
-
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -437,18 +379,18 @@ void fun_times_vector_vector_using_operator(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    const sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    const sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
     sep::vector_dense<double> v3(DIM_VEC);
 
-    auto t1(std::chrono::system_clock::now());
+    const auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
         v3 = v1 * v2;
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -457,19 +399,19 @@ void fun_times_vector_vector_using_operator(const uint64_t &trials,
     fun_display_a(TRIALS, DIM_VEC, TIME_TOTAL, SPEED, wformat);
 }
 
-void fun_times_vector_vector_element_by_element(const uint64_t &trials,
-                                                const uint64_t &vec_size,
-                                                const uint32_t &wformat) {
+void fun_times_vector_vector_element_by_element_square(const uint64_t &trials,
+                                                       const uint64_t &vec_size,
+                                                       const uint32_t &wformat) {
     const auto TRIALS(trials);
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    const sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    const sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
     sep::vector_dense<double> v3(DIM_VEC);
 
-    auto t1(std::chrono::system_clock::now());
+    const auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
         for (uint64_t j = 0; j < DIM_VEC; j++) {
@@ -477,8 +419,8 @@ void fun_times_vector_vector_element_by_element(const uint64_t &trials,
         }
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -487,26 +429,28 @@ void fun_times_vector_vector_element_by_element(const uint64_t &trials,
     fun_display_a(TRIALS, DIM_VEC, TIME_TOTAL, SPEED, wformat);
 }
 
-void fun_times_vector_vector_times_true(const uint64_t &trials,
-                                        const uint64_t &vec_size,
-                                        const uint32_t &wformat) {
+void fun_times_vector_vector_element_by_element_curly(const uint64_t &trials,
+                                                      const uint64_t &vec_size,
+                                                      const uint32_t &wformat) {
     const auto TRIALS(trials);
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    const sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    const sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
     sep::vector_dense<double> v3(DIM_VEC);
 
-    auto t1(std::chrono::system_clock::now());
+    const auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        v3 = v1 * v2;
+        for (uint64_t j = 0; j < DIM_VEC; j++) {
+            v3[j] = v1(j) * v2(j);
+        }
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -515,33 +459,6 @@ void fun_times_vector_vector_times_true(const uint64_t &trials,
     fun_display_a(TRIALS, DIM_VEC, TIME_TOTAL, SPEED, wformat);
 }
 
-void fun_times_vector_vector_times_false(const uint64_t &trials,
-                                         const uint64_t &vec_size,
-                                         const uint32_t &wformat) {
-    const auto TRIALS(trials);
-    const auto DIM_VEC(vec_size);
-    const auto TEST_VAL1(1234.5678);
-    const auto TEST_VAL2(8765.4321);
-
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    sep::vector_dense<double> v3(DIM_VEC);
-
-    auto t1(std::chrono::system_clock::now());
-
-    for (uint64_t i = 1; i <= TRIALS; i++) {
-        v3 = v1 * v2;
-    }
-
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
-            std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
-
-    const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
-    const auto SPEED((DIM_VEC * TRIALS) / (TIME_TOTAL / 1000.0));
-
-    fun_display_a(TRIALS, DIM_VEC, TIME_TOTAL, SPEED, wformat);
-}
 
 //==========//
 // subtract //
@@ -555,18 +472,18 @@ void fun_subtract_vector_vector_using_operator(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    const sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    const sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
     sep::vector_dense<double> v3(DIM_VEC);
 
-    auto t1(std::chrono::system_clock::now());
+    const auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
         v3 = v1 - v2;
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -575,19 +492,19 @@ void fun_subtract_vector_vector_using_operator(const uint64_t &trials,
     fun_display_a(TRIALS, DIM_VEC, TIME_TOTAL, SPEED, wformat);
 }
 
-void fun_subtract_vector_vector_element_by_element(const uint64_t &trials,
-                                                   const uint64_t &vec_size,
-                                                   const uint32_t &wformat) {
+void fun_subtract_vector_vector_element_by_element_square(const uint64_t &trials,
+                                                          const uint64_t &vec_size,
+                                                          const uint32_t &wformat) {
     const auto TRIALS(trials);
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    const sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    const sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
     sep::vector_dense<double> v3(DIM_VEC);
 
-    auto t1(std::chrono::system_clock::now());
+    const auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
         for (uint64_t j = 0; j < DIM_VEC; j++) {
@@ -595,8 +512,8 @@ void fun_subtract_vector_vector_element_by_element(const uint64_t &trials,
         }
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -605,54 +522,29 @@ void fun_subtract_vector_vector_element_by_element(const uint64_t &trials,
     fun_display_a(TRIALS, DIM_VEC, TIME_TOTAL, SPEED, wformat);
 }
 
-void fun_subtract_vector_vector_subtract_true(const uint64_t &trials,
-                                              const uint64_t &vec_size,
-                                              const uint32_t &wformat) {
+
+void fun_subtract_vector_vector_element_by_element_curly(const uint64_t &trials,
+                                                         const uint64_t &vec_size,
+                                                         const uint32_t &wformat) {
     const auto TRIALS(trials);
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    const sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    const sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
     sep::vector_dense<double> v3(DIM_VEC);
 
-    auto t1(std::chrono::system_clock::now());
+    const auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        v3 = v1 - v2;
+        for (uint64_t j = 0; j < DIM_VEC; j++) {
+            v3[j] = v1(j) - v2(j);
+        }
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
-            std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
-
-    const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
-    const auto SPEED((DIM_VEC * TRIALS) / (TIME_TOTAL / 1000.0));
-
-    fun_display_a(TRIALS, DIM_VEC, TIME_TOTAL, SPEED, wformat);
-}
-
-void fun_subtract_vector_vector_subtract_false(const uint64_t &trials,
-                                               const uint64_t &vec_size,
-                                               const uint32_t &wformat) {
-    const auto TRIALS(trials);
-    const auto DIM_VEC(vec_size);
-    const auto TEST_VAL1(1234.5678);
-    const auto TEST_VAL2(8765.4321);
-
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    sep::vector_dense<double> v3(DIM_VEC);
-
-    auto t1(std::chrono::system_clock::now());
-
-    for (uint64_t i = 1; i <= TRIALS; i++) {
-        v3 = v1 - v2;
-    }
-
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -673,18 +565,18 @@ void fun_divide_vector_vector_using_operator(const uint64_t &trials,
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    const sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    const sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
     sep::vector_dense<double> v3(DIM_VEC);
 
-    auto t1(std::chrono::system_clock::now());
+    const auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
         v3 = v1 / v2;
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -693,19 +585,19 @@ void fun_divide_vector_vector_using_operator(const uint64_t &trials,
     fun_display_a(TRIALS, DIM_VEC, TIME_TOTAL, SPEED, wformat);
 }
 
-void fun_divide_vector_vector_element_by_element(const uint64_t &trials,
-                                                 const uint64_t &vec_size,
-                                                 const uint32_t &wformat) {
+void fun_divide_vector_vector_element_by_element_square(const uint64_t &trials,
+                                                        const uint64_t &vec_size,
+                                                        const uint32_t &wformat) {
     const auto TRIALS(trials);
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    const sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    const sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
     sep::vector_dense<double> v3(DIM_VEC);
 
-    auto t1(std::chrono::system_clock::now());
+    const auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
         for (uint64_t j = 0; j < DIM_VEC; j++) {
@@ -713,8 +605,8 @@ void fun_divide_vector_vector_element_by_element(const uint64_t &trials,
         }
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
@@ -723,54 +615,28 @@ void fun_divide_vector_vector_element_by_element(const uint64_t &trials,
     fun_display_a(TRIALS, DIM_VEC, TIME_TOTAL, SPEED, wformat);
 }
 
-void fun_divide_vector_vector_divide_true(const uint64_t &trials,
-                                          const uint64_t &vec_size,
-                                          const uint32_t &wformat) {
+void fun_divide_vector_vector_element_by_element_curly(const uint64_t &trials,
+                                                       const uint64_t &vec_size,
+                                                       const uint32_t &wformat) {
     const auto TRIALS(trials);
     const auto DIM_VEC(vec_size);
     const auto TEST_VAL1(1234.5678);
     const auto TEST_VAL2(8765.4321);
 
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
+    const sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
+    const sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
     sep::vector_dense<double> v3(DIM_VEC);
 
-    auto t1(std::chrono::system_clock::now());
+    const auto t1(std::chrono::system_clock::now());
 
     for (uint64_t i = 1; i <= TRIALS; i++) {
-        v3 = v1 / v2;
+        for (uint64_t j = 0; j < DIM_VEC; j++) {
+            v3[j] = v1(j) / v2(j);
+        }
     }
 
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
-            std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
-
-    const auto TIME_TOTAL(time_span_alloc_via_constructor.count());
-    const auto SPEED((DIM_VEC * TRIALS) / (TIME_TOTAL / 1000.0));
-
-    fun_display_a(TRIALS, DIM_VEC, TIME_TOTAL, SPEED, wformat);
-}
-
-void fun_divide_vector_vector_divide_false(const uint64_t &trials,
-                                           const uint64_t &vec_size,
-                                           const uint32_t &wformat) {
-    const auto TRIALS(trials);
-    const auto DIM_VEC(vec_size);
-    const auto TEST_VAL1(1234.5678);
-    const auto TEST_VAL2(8765.4321);
-
-    sep::vector_dense<double> v1(DIM_VEC, TEST_VAL1);
-    sep::vector_dense<double> v2(DIM_VEC, TEST_VAL2);
-    sep::vector_dense<double> v3(DIM_VEC);
-
-    auto t1(std::chrono::system_clock::now());
-
-    for (uint64_t i = 1; i <= TRIALS; i++) {
-        v3 = v1 / v2;
-    }
-
-    auto t2(std::chrono::system_clock::now());
-    auto time_span_alloc_via_constructor(
+    const auto t2(std::chrono::system_clock::now());
+    const auto time_span_alloc_via_constructor(
             std::chrono::duration_cast<std::chrono::duration<double, std::milli>>(t2 - t1));
 
     const auto TIME_TOTAL(time_span_alloc_via_constructor.count());

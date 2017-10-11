@@ -9,8 +9,8 @@ void tests() {
 
     const double TEST_VALUE1(1234.56789);
     const uint32_t SETW(11);
-    const uint64_t DIM_VEC(static_cast<uint64_t>(std::pow(10.0, 4.0)));
-    const uint64_t TRIALS(static_cast<uint32_t>(std::pow(10.0, 2.0)));
+    const auto DIM_VEC(static_cast<uint64_t>(std::pow(10.0, 6.0)));
+    const auto TRIALS(static_cast<uint32_t>(std::pow(10.0, 2.0)));
 
     //==================//
     // speed tests here //

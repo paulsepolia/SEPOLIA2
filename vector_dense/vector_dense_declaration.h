@@ -99,7 +99,7 @@ namespace sep {
                                           const vector_dense<T2> &);
 
         // operator ()
-        T operator()(const uint64_t &) const;
+        const T &operator()(const uint64_t &) const;
 
         // operator []
         T &operator[](const uint64_t &) const;
@@ -186,13 +186,9 @@ namespace sep {
         bool _is_alloc;
         std::shared_ptr<T> _vdsp;
 
-        //================//
-        // help functions //
-        //================//
-
-        //===============//
-        // algebra_dense //
-        //===============//
+        //==============================//
+        // algebra_dense help functions //
+        //==============================//
 
         vector_dense<T> plus(const vector_dense<T> &, const bool & = false) const;
 
@@ -209,10 +205,6 @@ namespace sep {
         vector_dense<T> divide(const vector_dense<T> &, const bool & = false) const;
 
         vector_dense<T> divide(const T &, const bool & = false) const;
-
-        //================//
-        // help functions //
-        //================//
 
         void vector_dense_transform(vector_dense<T> &vec_in_out,
                                     std::function<T(T, T)> fun,

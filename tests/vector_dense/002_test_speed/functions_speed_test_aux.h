@@ -51,10 +51,6 @@ void fun_set_via_assignment_operator(const uint64_t &, const uint64_t &, const d
 
 void fun_set_vector_element_by_element(const uint64_t &, const uint64_t &, const uint32_t &);
 
-// fun_set_vector_element_by_element_square
-
-void fun_set_vector_element_by_element_square(const uint64_t &, const uint64_t &, const uint32_t &);
-
 //=====//
 // get //
 //=====//
@@ -73,11 +69,9 @@ void fun_get_vector_element_by_element_curly(const uint64_t &, const uint64_t &,
 
 void fun_add_vector_vector_using_operator(const uint64_t &, const uint64_t &, const uint32_t &);
 
-void fun_add_vector_vector_element_by_element(const uint64_t &, const uint64_t &, const uint32_t &);
+void fun_add_vector_vector_element_by_element_square(const uint64_t &, const uint64_t &, const uint32_t &);
 
-void fun_add_vector_vector_plus_true(const uint64_t &, const uint64_t &, const uint32_t &);
-
-void fun_add_vector_vector_plus_false(const uint64_t &, const uint64_t &, const uint32_t &);
+void fun_add_vector_vector_element_by_element_curly(const uint64_t &, const uint64_t &, const uint32_t &);
 
 //=======//
 // times //
@@ -85,12 +79,9 @@ void fun_add_vector_vector_plus_false(const uint64_t &, const uint64_t &, const 
 
 void fun_times_vector_vector_using_operator(const uint64_t &, const uint64_t &, const uint32_t &);
 
-void fun_times_vector_vector_element_by_element(const uint64_t &, const uint64_t &, const uint32_t &);
+void fun_times_vector_vector_element_by_element_square(const uint64_t &, const uint64_t &, const uint32_t &);
 
-void fun_times_vector_vector_times_true(const uint64_t &, const uint64_t &, const uint32_t &);
-
-void fun_times_vector_vector_times_false(const uint64_t &, const uint64_t &, const uint32_t &);
-
+void fun_times_vector_vector_element_by_element_curly(const uint64_t &, const uint64_t &, const uint32_t &);
 
 //==========//
 // subtract //
@@ -98,11 +89,9 @@ void fun_times_vector_vector_times_false(const uint64_t &, const uint64_t &, con
 
 void fun_subtract_vector_vector_using_operator(const uint64_t &, const uint64_t &, const uint32_t &);
 
-void fun_subtract_vector_vector_element_by_element(const uint64_t &, const uint64_t &, const uint32_t &);
+void fun_subtract_vector_vector_element_by_element_square(const uint64_t &, const uint64_t &, const uint32_t &);
 
-void fun_subtract_vector_vector_subtract_true(const uint64_t &, const uint64_t &, const uint32_t &);
-
-void fun_subtract_vector_vector_subtract_false(const uint64_t &, const uint64_t &, const uint32_t &);
+void fun_subtract_vector_vector_element_by_element_curly(const uint64_t &, const uint64_t &, const uint32_t &);
 
 //========//
 // divide //
@@ -110,8 +99,6 @@ void fun_subtract_vector_vector_subtract_false(const uint64_t &, const uint64_t 
 
 void fun_divide_vector_vector_using_operator(const uint64_t &, const uint64_t &, const uint32_t &);
 
-void fun_divide_vector_vector_element_by_element(const uint64_t &, const uint64_t &, const uint32_t &);
+void fun_divide_vector_vector_element_by_element_square(const uint64_t &, const uint64_t &, const uint32_t &);
 
-void fun_divide_vector_vector_divide_true(const uint64_t &, const uint64_t &, const uint32_t &);
-
-void fun_divide_vector_vector_divide_false(const uint64_t &, const uint64_t &, const uint32_t &);
+void fun_divide_vector_vector_element_by_element_curly(const uint64_t &, const uint64_t &, const uint32_t &);
